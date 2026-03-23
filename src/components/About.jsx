@@ -49,7 +49,7 @@ export default function About() {
                 width: '100%',
                 height: '420px',
                 objectFit: 'cover',
-                objectPosition: 'center top',
+                objectPosition: 'center 20%',
                 display: 'block',
               }}
             />
