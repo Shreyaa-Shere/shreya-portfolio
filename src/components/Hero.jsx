@@ -5,23 +5,25 @@ import { Link } from 'react-router-dom';
 import { personalInfo, stats } from '../data/portfolioData';
 
 export default function Hero() {
-  // Hide scrollbar only on home page
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
 
   return (
-    <section style={{
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '0 48px',
-      position: 'relative',
-      overflow: 'hidden',
-      maxWidth: '1300px',
-      margin: '0 auto',
-    }}>
+    <section
+      className="hero-section"
+      style={{
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '0 48px',
+        position: 'relative',
+        overflow: 'hidden',
+        maxWidth: '1300px',
+        margin: '0 auto',
+      }}
+    >
       {/* Background glows */}
       <div style={{
         position: 'fixed', top: '10%', right: '5%',
@@ -36,21 +38,13 @@ export default function Hero() {
         pointerEvents: 'none', zIndex: 0,
       }} />
 
-      {/* Two-column layout */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr auto',
-        gap: '64px',
-        alignItems: 'center',
-        width: '100%',
-        position: 'relative',
-        zIndex: 1,
-      }}>
+      <div className="hero-grid" style={{ position: 'relative', zIndex: 1 }}>
 
-        {/* LEFT — Text content */}
+        {/* LEFT — Text */}
         <div>
           {/* Badge */}
           <motion.div
+            className="hero-badge"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -62,7 +56,7 @@ export default function Hero() {
               marginBottom: '20px', fontSize: '0.85rem', color: '#c4b5fd',
             }}
           >
-            <span style={{ width: 8, height: 8, background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 8px #22c55e', display: 'inline-block' }} />
+            <span style={{ width: 8, height: 8, background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 8px #22c55e', display: 'inline-block', flexShrink: 0 }} />
             Open to opportunities · {personalInfo.tagline}
           </motion.div>
 
@@ -73,7 +67,7 @@ export default function Hero() {
           >
             <p style={{ color: '#94a3b8', fontSize: '1rem', marginBottom: '6px' }}>Hi There, I&apos;m</p>
             <h1 style={{
-              fontSize: 'clamp(2.8rem, 6vw, 5rem)',
+              fontSize: 'clamp(2.4rem, 5.5vw, 5rem)',
               fontWeight: 900, lineHeight: 1.05, marginBottom: '12px',
               background: 'linear-gradient(135deg, #f8fafc 0%, #c4b5fd 50%, #a855f7 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
@@ -81,7 +75,7 @@ export default function Hero() {
               {personalInfo.name}
             </h1>
             <h2 style={{
-              fontSize: 'clamp(1rem, 2vw, 1.3rem)', fontWeight: 600,
+              fontSize: 'clamp(0.9rem, 2vw, 1.3rem)', fontWeight: 600,
               color: '#a855f7', marginBottom: '20px',
               letterSpacing: '0.05em', textTransform: 'uppercase',
             }}>
@@ -93,17 +87,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ color: '#94a3b8', fontSize: '0.975rem', lineHeight: 1.7, maxWidth: '520px', marginBottom: '28px' }}
+            style={{
+              color: '#94a3b8', fontSize: '0.975rem', lineHeight: 1.7,
+              maxWidth: '520px', marginBottom: '28px',
+            }}
           >
             {personalInfo.bio1}
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <motion.div
+            className="hero-text-actions"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '40px' }}
+            style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '36px' }}
           >
             <Link to="/contact" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               Hire Me <ArrowRight size={15} />
@@ -127,6 +125,7 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div
+            className="hero-stats"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -143,21 +142,19 @@ export default function Hero() {
 
         {/* RIGHT — Photo */}
         <motion.div
+          className="hero-photo-col"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           style={{ position: 'relative', flexShrink: 0 }}
         >
-          {/* Outer glow ring */}
+          {/* Glow ring */}
           <div style={{
             position: 'absolute', inset: '-3px',
             borderRadius: '28px',
             background: 'linear-gradient(135deg, #7c3aed, #a855f7, #7c3aed)',
-            zIndex: 0,
-            filter: 'blur(1px)',
+            zIndex: 0, filter: 'blur(1px)',
           }} />
-
-          {/* Purple glow behind */}
           <div style={{
             position: 'absolute', inset: '-20px',
             borderRadius: '40px',
@@ -165,7 +162,6 @@ export default function Hero() {
             zIndex: 0,
           }} />
 
-          {/* Photo container */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -174,28 +170,15 @@ export default function Hero() {
             <img
               src="/shreya.jpg"
               alt="Shreya Shere"
-              style={{
-                width: '340px',
-                height: '420px',
-                objectFit: 'cover',
-                objectPosition: 'center top',
-                borderRadius: '24px',
-                display: 'block',
-                position: 'relative',
-                zIndex: 1,
-              }}
+              className="hero-photo"
             />
-
-            {/* Bottom gradient fade */}
+            {/* Bottom fade */}
             <div style={{
-              position: 'absolute', bottom: 0, left: 0, right: 0,
-              height: '120px',
+              position: 'absolute', bottom: 0, left: 0, right: 0, height: '120px',
               background: 'linear-gradient(to top, rgba(7,7,15,0.7) 0%, transparent 100%)',
-              borderRadius: '0 0 24px 24px',
-              zIndex: 2,
+              borderRadius: '0 0 24px 24px', zIndex: 2,
             }} />
-
-            {/* Open to work badge on photo */}
+            {/* Open to work badge */}
             <div style={{
               position: 'absolute', bottom: '16px', left: '50%',
               transform: 'translateX(-50%)',

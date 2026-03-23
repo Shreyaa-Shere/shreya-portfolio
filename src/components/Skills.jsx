@@ -3,7 +3,7 @@ import { skills } from '../data/portfolioData';
 
 export default function Skills() {
   return (
-    <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '100px 24px' }}>
+    <section className="page-wrap">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

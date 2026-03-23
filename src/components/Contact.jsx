@@ -12,7 +12,7 @@ export default function Contact() {
   };
 
   return (
-    <section style={{ maxWidth: '1000px', margin: '0 auto', padding: '100px 24px' }}>
+    <section className="page-wrap" style={{ maxWidth: '1000px' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
