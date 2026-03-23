@@ -25,25 +25,40 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-card"
-          style={{ padding: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}
+          style={{ position: 'relative' }}
         >
-          <div style={{ textAlign: 'center' }}>
+          {/* Gradient border ring */}
+          <div style={{
+            position: 'absolute', inset: '-3px',
+            borderRadius: '22px',
+            background: 'linear-gradient(135deg, #f472b6, #c084fc, #818cf8)',
+            zIndex: 0, filter: 'blur(1px)',
+          }} />
+          {/* Glow */}
+          <div style={{
+            position: 'absolute', inset: '-18px',
+            borderRadius: '32px',
+            background: 'radial-gradient(circle, rgba(244,114,182,0.2) 0%, transparent 70%)',
+            zIndex: 0,
+          }} />
+          <div style={{ position: 'relative', zIndex: 1, borderRadius: '20px', overflow: 'hidden' }}>
+            <img
+              src="/shreya-about.jpg"
+              alt="Shreya Shere"
+              style={{
+                width: '100%',
+                height: '420px',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                display: 'block',
+              }}
+            />
+            {/* Bottom fade overlay */}
             <div style={{
-              width: '120px',
-              height: '120px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #f472b6, #c084fc)',
-              margin: '0 auto 20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '3rem',
-              fontWeight: 800,
-              color: 'white',
-            }}>SS</div>
-            <div style={{ color: '#c084fc', fontSize: '0.875rem', fontWeight: 600 }}>AI Engineer + Developer</div>
-            <div style={{ color: '#71717a', fontSize: '0.8rem', marginTop: '4px' }}>Arizona State University</div>
+              position: 'absolute', bottom: 0, left: 0, right: 0,
+              height: '80px',
+              background: 'linear-gradient(to top, rgba(9,9,15,0.6) 0%, transparent 100%)',
+            }} />
           </div>
         </motion.div>
 
