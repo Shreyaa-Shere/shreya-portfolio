@@ -43,7 +43,7 @@ export default function BackgroundAnimation() {
         y: canvas.height + randomBetween(0, 100),
         size: randomBetween(13, 20),
         speed: randomBetween(0.25, 0.7),
-        opacity: randomBetween(0.17, 0.25),
+        opacity: randomBetween(0.09, 0.15),
         drift: randomBetween(-0.15, 0.15),    // gentle horizontal sway
         color,
         life: 0,                               // 0→1 for fade in/out
