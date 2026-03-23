@@ -31,9 +31,9 @@ export default function Navbar() {
       right: 0,
       zIndex: 1000,
       padding: '16px 24px',
-      background: scrolled ? 'rgba(7,7,15,0.95)' : 'transparent',
+      background: scrolled ? 'rgba(9,9,15,0.92)' : 'transparent',
       backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(139,92,246,0.1)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
       transition: 'all 0.3s ease',
       display: 'flex',
       alignItems: 'center',
@@ -43,7 +43,7 @@ export default function Navbar() {
       <Link to="/" style={{
         fontSize: '1.25rem',
         fontWeight: 800,
-        background: 'linear-gradient(135deg, #8b5cf6, #a855f7)',
+        background: 'linear-gradient(135deg, #f472b6, #c084fc)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
@@ -56,8 +56,8 @@ export default function Navbar() {
         style={{
           display: 'flex',
           gap: '4px',
-          background: 'rgba(139,92,246,0.08)',
-          border: '1px solid rgba(139,92,246,0.15)',
+          background: 'rgba(255,255,255,0.04)',
+          border: '1px solid rgba(255,255,255,0.07)',
           borderRadius: '50px',
           padding: '6px',
         }}
@@ -74,9 +74,9 @@ export default function Navbar() {
               textDecoration: 'none',
               transition: 'all 0.2s ease',
               background: location.pathname === link.path
-                ? 'linear-gradient(135deg, #7c3aed, #a855f7)'
+                ? 'linear-gradient(135deg, #f472b6, #c084fc)'
                 : 'transparent',
-              color: location.pathname === link.path ? 'white' : '#94a3b8',
+              color: location.pathname === link.path ? 'white' : '#a1a1aa',
             }}
           >
             {link.name}
@@ -87,7 +87,7 @@ export default function Navbar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
-        style={{ background: 'none', border: 'none', color: '#a855f7', cursor: 'pointer' }}
+        style={{ background: 'none', border: 'none', color: '#c084fc', cursor: 'pointer' }}
         className="show-mobile"
       >
         {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,9 +100,9 @@ export default function Navbar() {
           top: '100%',
           left: 0,
           right: 0,
-          background: 'rgba(7,7,15,0.98)',
+          background: 'rgba(9,9,15,0.98)',
           backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(139,92,246,0.15)',
+          border: '1px solid rgba(255,255,255,0.07)',
           padding: '16px',
           display: 'flex',
           flexDirection: 'column',
@@ -118,8 +118,8 @@ export default function Navbar() {
                 borderRadius: '12px',
                 fontSize: '0.95rem',
                 textDecoration: 'none',
-                color: location.pathname === link.path ? '#a855f7' : '#94a3b8',
-                background: location.pathname === link.path ? 'rgba(139,92,246,0.1)' : 'transparent',
+                color: location.pathname === link.path ? '#c084fc' : '#a1a1aa',
+                background: location.pathname === link.path ? 'rgba(192,132,252,0.08)' : 'transparent',
               }}
             >
               {link.name}

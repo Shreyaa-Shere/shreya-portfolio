@@ -24,17 +24,23 @@ export default function Hero() {
         margin: '0 auto',
       }}
     >
-      {/* Background glows */}
+      {/* Aurora background blobs */}
       <div style={{
-        position: 'fixed', top: '10%', right: '5%',
-        width: '600px', height: '600px',
-        background: 'radial-gradient(circle, rgba(124,58,237,0.14) 0%, transparent 70%)',
+        position: 'fixed', top: '0%', right: '0%',
+        width: '700px', height: '700px',
+        background: 'radial-gradient(ellipse, rgba(244,114,182,0.13) 0%, transparent 65%)',
         pointerEvents: 'none', zIndex: 0,
       }} />
       <div style={{
-        position: 'fixed', bottom: '10%', left: '0%',
-        width: '400px', height: '400px',
-        background: 'radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%)',
+        position: 'fixed', bottom: '0%', left: '0%',
+        width: '600px', height: '600px',
+        background: 'radial-gradient(ellipse, rgba(129,140,248,0.10) 0%, transparent 65%)',
+        pointerEvents: 'none', zIndex: 0,
+      }} />
+      <div style={{
+        position: 'fixed', top: '40%', left: '30%',
+        width: '500px', height: '500px',
+        background: 'radial-gradient(ellipse, rgba(192,132,252,0.07) 0%, transparent 60%)',
         pointerEvents: 'none', zIndex: 0,
       }} />
 
@@ -50,13 +56,13 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(139,92,246,0.1)',
-              border: '1px solid rgba(139,92,246,0.25)',
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '50px', padding: '7px 16px',
-              marginBottom: '20px', fontSize: '0.85rem', color: '#c4b5fd',
+              marginBottom: '20px', fontSize: '0.85rem', color: '#d4d4d8',
             }}
           >
-            <span style={{ width: 8, height: 8, background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 8px #22c55e', display: 'inline-block', flexShrink: 0 }} />
+            <span style={{ width: 8, height: 8, background: '#4ade80', borderRadius: '50%', boxShadow: '0 0 8px #4ade80', display: 'inline-block', flexShrink: 0 }} />
             Open to opportunities · {personalInfo.tagline}
           </motion.div>
 
@@ -65,18 +71,18 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <p style={{ color: '#94a3b8', fontSize: '1rem', marginBottom: '6px' }}>Hi There, I&apos;m</p>
+            <p style={{ color: '#a1a1aa', fontSize: '1rem', marginBottom: '6px' }}>Hi There, I&apos;m</p>
             <h1 style={{
               fontSize: 'clamp(2.4rem, 5.5vw, 5rem)',
               fontWeight: 900, lineHeight: 1.05, marginBottom: '12px',
-              background: 'linear-gradient(135deg, #f8fafc 0%, #c4b5fd 50%, #a855f7 100%)',
+              background: 'linear-gradient(135deg, #fafafa 0%, #fda4af 40%, #c084fc 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>
               {personalInfo.name}
             </h1>
             <h2 style={{
               fontSize: 'clamp(0.9rem, 2vw, 1.3rem)', fontWeight: 600,
-              color: '#a855f7', marginBottom: '20px',
+              color: '#e879f9', marginBottom: '20px',
               letterSpacing: '0.05em', textTransform: 'uppercase',
             }}>
               {personalInfo.role}
@@ -88,7 +94,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             style={{
-              color: '#94a3b8', fontSize: '0.975rem', lineHeight: 1.7,
+              color: '#a1a1aa', fontSize: '0.975rem', lineHeight: 1.7,
               maxWidth: '520px', marginBottom: '28px',
             }}
           >
@@ -111,14 +117,14 @@ export default function Hero() {
             </a>
             <div style={{ display: 'flex', gap: '12px', marginLeft: '4px' }}>
               <a href={personalInfo.linkedinUrl} target="_blank" rel="noreferrer"
-                style={{ color: '#94a3b8', transition: 'color 0.2s ease', display: 'flex' }}
-                onMouseOver={e => e.currentTarget.style.color = '#a855f7'}
-                onMouseOut={e => e.currentTarget.style.color = '#94a3b8'}
+                style={{ color: '#a1a1aa', transition: 'color 0.2s ease', display: 'flex' }}
+                onMouseOver={e => e.currentTarget.style.color = '#f472b6'}
+                onMouseOut={e => e.currentTarget.style.color = '#a1a1aa'}
               ><Linkedin size={21} /></a>
               <a href={personalInfo.githubUrl} target="_blank" rel="noreferrer"
-                style={{ color: '#94a3b8', transition: 'color 0.2s ease', display: 'flex' }}
-                onMouseOver={e => e.currentTarget.style.color = '#a855f7'}
-                onMouseOut={e => e.currentTarget.style.color = '#94a3b8'}
+                style={{ color: '#a1a1aa', transition: 'color 0.2s ease', display: 'flex' }}
+                onMouseOver={e => e.currentTarget.style.color = '#f472b6'}
+                onMouseOut={e => e.currentTarget.style.color = '#a1a1aa'}
               ><Github size={21} /></a>
             </div>
           </motion.div>
@@ -133,8 +139,8 @@ export default function Hero() {
           >
             {stats.map((stat, i) => (
               <div key={i}>
-                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#a855f7' }}>{stat.value}</div>
-                <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '2px' }}>{stat.label}</div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f472b6' }}>{stat.value}</div>
+                <div style={{ fontSize: '0.75rem', color: '#71717a', marginTop: '2px' }}>{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -152,13 +158,13 @@ export default function Hero() {
           <div style={{
             position: 'absolute', inset: '-3px',
             borderRadius: '28px',
-            background: 'linear-gradient(135deg, #7c3aed, #a855f7, #7c3aed)',
+            background: 'linear-gradient(135deg, #f472b6, #c084fc, #818cf8)',
             zIndex: 0, filter: 'blur(1px)',
           }} />
           <div style={{
             position: 'absolute', inset: '-20px',
             borderRadius: '40px',
-            background: 'radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(244,114,182,0.3) 0%, transparent 70%)',
             zIndex: 0,
           }} />
 
@@ -175,7 +181,7 @@ export default function Hero() {
             {/* Bottom fade */}
             <div style={{
               position: 'absolute', bottom: 0, left: 0, right: 0, height: '120px',
-              background: 'linear-gradient(to top, rgba(7,7,15,0.7) 0%, transparent 100%)',
+              background: 'linear-gradient(to top, rgba(9,9,15,0.7) 0%, transparent 100%)',
               borderRadius: '0 0 24px 24px', zIndex: 2,
             }} />
             {/* Open to work badge */}
@@ -184,14 +190,14 @@ export default function Hero() {
               transform: 'translateX(-50%)',
               zIndex: 3,
               display: 'flex', alignItems: 'center', gap: '6px',
-              background: 'rgba(7,7,15,0.8)',
+              background: 'rgba(255,255,255,0.05)',
               backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(139,92,246,0.3)',
+              border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '50px', padding: '7px 16px',
-              fontSize: '0.8rem', color: '#c4b5fd',
+              fontSize: '0.8rem', color: '#d4d4d8',
               whiteSpace: 'nowrap',
             }}>
-              <span style={{ width: 7, height: 7, background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 8px #22c55e', display: 'inline-block' }} />
+              <span style={{ width: 7, height: 7, background: '#4ade80', borderRadius: '50%', boxShadow: '0 0 8px #4ade80', display: 'inline-block' }} />
               Open to work
             </div>
           </motion.div>

@@ -36,17 +36,17 @@ export default function Projects() {
             }}
           >
             <div style={{ flex: 1 }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', marginBottom: '6px' }}>{proj.title}</h3>
-              <div style={{ color: '#a855f7', fontWeight: 600, fontSize: '0.875rem', marginBottom: '16px' }}>{proj.subtitle}</div>
-              <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '20px' }}>{proj.description}</p>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fafafa', marginBottom: '6px' }}>{proj.title}</h3>
+              <div style={{ color: '#e879f9', fontWeight: 600, fontSize: '0.875rem', marginBottom: '16px' }}>{proj.subtitle}</div>
+              <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '20px' }}>{proj.description}</p>
 
               {/* Tags */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
                 {proj.tags.map((tag, j) => (
                   <span key={j} style={{
-                    background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.3))',
-                    border: '1px solid rgba(139,92,246,0.3)',
-                    color: '#c4b5fd',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    color: '#d4d4d8',
                     padding: '4px 12px',
                     borderRadius: '50px',
                     fontSize: '0.75rem',
@@ -58,8 +58,8 @@ export default function Projects() {
               {/* Highlights */}
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '24px', listStyle: 'none', padding: 0 }}>
                 {proj.highlights.map((h, j) => (
-                  <li key={j} style={{ color: '#94a3b8', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#a855f7', display: 'inline-block', flexShrink: 0 }} />
+                  <li key={j} style={{ color: '#a1a1aa', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#f472b6', display: 'inline-block', flexShrink: 0 }} />
                     {h}
                   </li>
                 ))}
@@ -77,15 +77,15 @@ export default function Projects() {
                 justifyContent: 'center',
                 gap: '8px',
                 padding: '12px',
-                border: '1px solid rgba(139,92,246,0.25)',
+                border: '1px solid rgba(255,255,255,0.08)',
                 borderRadius: '12px',
-                color: '#94a3b8',
+                color: '#a1a1aa',
                 textDecoration: 'none',
                 fontSize: '0.875rem',
                 transition: 'all 0.2s ease',
               }}
-              onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.6)'; e.currentTarget.style.color = '#a855f7'; }}
-              onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.25)'; e.currentTarget.style.color = '#94a3b8'; }}
+              onMouseOver={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'; e.currentTarget.style.color = '#f472b6'; }}
+              onMouseOut={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = '#a1a1aa'; }}
             >
               <Github size={16} /> Code
             </a>

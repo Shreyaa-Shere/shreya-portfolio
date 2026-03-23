@@ -34,21 +34,21 @@ export default function Leadership() {
               <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                 <div style={{
                   width: '48px', height: '48px', flexShrink: 0,
-                  background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+                  background: 'linear-gradient(135deg, #f472b6, #c084fc)',
                   borderRadius: '12px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
                   {Icon && <Icon size={22} color="white" />}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#f8fafc', marginBottom: '4px' }}>{item.title}</h3>
-                  <div style={{ color: '#a855f7', fontWeight: 600, fontSize: '0.875rem', marginBottom: '4px' }}>{item.org}</div>
-                  <div style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: '12px' }}>{item.period}</div>
-                  <p style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '14px' }}>{item.description}</p>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fafafa', marginBottom: '4px' }}>{item.title}</h3>
+                  <div style={{ color: '#e879f9', fontWeight: 600, fontSize: '0.875rem', marginBottom: '4px' }}>{item.org}</div>
+                  <div style={{ color: '#71717a', fontSize: '0.8rem', marginBottom: '12px' }}>{item.period}</div>
+                  <p style={{ color: '#a1a1aa', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '14px' }}>{item.description}</p>
                   <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                     {item.highlights.map((h, j) => (
-                      <span key={j} style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#94a3b8', fontSize: '0.8rem' }}>
-                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#a855f7', display: 'inline-block' }} />
+                      <span key={j} style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#a1a1aa', fontSize: '0.8rem' }}>
+                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#c084fc', display: 'inline-block' }} />
                         {h}
                       </span>
                     ))}
@@ -72,9 +72,9 @@ export default function Leadership() {
             const Icon = iconMap[val.icon];
             return (
               <div key={i} className="glass-card" style={{ padding: '28px', textAlign: 'center' }}>
-                {Icon && <Icon size={28} color="#a855f7" style={{ margin: '0 auto 12px', display: 'block' }} />}
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#f8fafc', marginBottom: '8px' }}>{val.title}</h3>
-                <p style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.5 }}>{val.desc}</p>
+                {Icon && <Icon size={28} color="#f472b6" style={{ margin: '0 auto 12px', display: 'block' }} />}
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '8px' }}>{val.title}</h3>
+                <p style={{ color: '#71717a', fontSize: '0.85rem', lineHeight: 1.5 }}>{val.desc}</p>
               </div>
             );
           })}

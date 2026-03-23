@@ -33,7 +33,7 @@ export default function About() {
               width: '120px',
               height: '120px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+              background: 'linear-gradient(135deg, #f472b6, #c084fc)',
               margin: '0 auto 20px',
               display: 'flex',
               alignItems: 'center',
@@ -42,8 +42,8 @@ export default function About() {
               fontWeight: 800,
               color: 'white',
             }}>SS</div>
-            <div style={{ color: '#a855f7', fontSize: '0.875rem', fontWeight: 600 }}>AI Engineer + Developer</div>
-            <div style={{ color: '#64748b', fontSize: '0.8rem', marginTop: '4px' }}>Arizona State University</div>
+            <div style={{ color: '#c084fc', fontSize: '0.875rem', fontWeight: 600 }}>AI Engineer + Developer</div>
+            <div style={{ color: '#71717a', fontSize: '0.8rem', marginTop: '4px' }}>Arizona State University</div>
           </div>
         </motion.div>
 
@@ -53,11 +53,11 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#f8fafc', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#fafafa', marginBottom: '16px' }}>
             Hi, I&apos;m {personalInfo.name}
           </h2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '16px' }}>{personalInfo.bioLong}</p>
-          <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>{personalInfo.bioLong2}</p>
+          <p style={{ color: '#a1a1aa', lineHeight: 1.8, marginBottom: '16px' }}>{personalInfo.bioLong}</p>
+          <p style={{ color: '#a1a1aa', lineHeight: 1.8 }}>{personalInfo.bioLong2}</p>
         </motion.div>
       </div>
 
@@ -69,16 +69,16 @@ export default function About() {
         transition={{ duration: 0.6 }}
         style={{ marginBottom: '64px' }}
       >
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#f8fafc', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <GraduationCap size={24} color="#a855f7" /> Education
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#fafafa', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <GraduationCap size={24} color="#c084fc" /> Education
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }} className="edu-grid">
           {education.map((edu, i) => (
             <div key={i} className="glass-card" style={{ padding: '28px' }}>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#f8fafc', marginBottom: '8px' }}>{edu.degree}</h3>
-              <div style={{ color: '#a855f7', fontWeight: 600, fontSize: '0.9rem', marginBottom: '4px' }}>{edu.school}</div>
-              <div style={{ color: '#64748b', fontSize: '0.85rem', marginBottom: '4px' }}>{edu.period}</div>
-              <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>GPA: <span style={{ color: '#c4b5fd', fontWeight: 600 }}>{edu.gpa}</span></div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fafafa', marginBottom: '8px' }}>{edu.degree}</h3>
+              <div style={{ color: '#e879f9', fontWeight: 600, fontSize: '0.9rem', marginBottom: '4px' }}>{edu.school}</div>
+              <div style={{ color: '#71717a', fontSize: '0.85rem', marginBottom: '4px' }}>{edu.period}</div>
+              <div style={{ color: '#a1a1aa', fontSize: '0.85rem' }}>GPA: <span style={{ color: '#c084fc', fontWeight: 600 }}>{edu.gpa}</span></div>
             </div>
           ))}
         </div>
@@ -91,7 +91,7 @@ export default function About() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#f8fafc', marginBottom: '24px', textAlign: 'center' }}>Areas of Expertise</h2>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#fafafa', marginBottom: '24px', textAlign: 'center' }}>Areas of Expertise</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }} className="expertise-grid">
           {expertise.map((item, i) => {
             const Icon = iconMap[item.icon];
@@ -99,15 +99,15 @@ export default function About() {
               <div key={i} className="glass-card" style={{ padding: '32px', textAlign: 'center' }}>
                 <div style={{
                   width: '56px', height: '56px',
-                  background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+                  background: 'linear-gradient(135deg, #f472b6, #c084fc)',
                   borderRadius: '14px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   margin: '0 auto 16px',
                 }}>
                   {Icon && <Icon size={24} color="white" />}
                 </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#f8fafc', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ color: '#64748b', fontSize: '0.875rem', lineHeight: 1.6 }}>{item.desc}</p>
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ color: '#71717a', fontSize: '0.875rem', lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             );
           })}

@@ -34,11 +34,11 @@ export default function Contact() {
           className="glass-card"
           style={{ padding: '36px' }}
         >
-          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', marginBottom: '24px' }}>Send a Message</h2>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fafafa', marginBottom: '24px' }}>Send a Message</h2>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {['name', 'email'].map(field => (
               <div key={field}>
-                <label style={{ display: 'block', fontSize: '0.85rem', color: '#94a3b8', marginBottom: '6px', textTransform: 'capitalize' }}>{field}</label>
+                <label style={{ display: 'block', fontSize: '0.85rem', color: '#a1a1aa', marginBottom: '6px', textTransform: 'capitalize' }}>{field}</label>
                 <input
                   type={field === 'email' ? 'email' : 'text'}
                   placeholder={field === 'name' ? 'Your name' : 'your.email@example.com'}
@@ -47,22 +47,22 @@ export default function Contact() {
                   required
                   style={{
                     width: '100%',
-                    background: 'rgba(139,92,246,0.05)',
-                    border: '1px solid rgba(139,92,246,0.2)',
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: '10px',
                     padding: '12px 16px',
-                    color: '#f8fafc',
+                    color: '#fafafa',
                     fontSize: '0.9rem',
                     outline: 'none',
                     transition: 'border-color 0.2s ease',
                   }}
-                  onFocus={e => e.target.style.borderColor = 'rgba(139,92,246,0.6)'}
-                  onBlur={e => e.target.style.borderColor = 'rgba(139,92,246,0.2)'}
+                  onFocus={e => e.target.style.borderColor = 'rgba(192,132,252,0.5)'}
+                  onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
                 />
               </div>
             ))}
             <div>
-              <label style={{ display: 'block', fontSize: '0.85rem', color: '#94a3b8', marginBottom: '6px' }}>Message</label>
+              <label style={{ display: 'block', fontSize: '0.85rem', color: '#a1a1aa', marginBottom: '6px' }}>Message</label>
               <textarea
                 placeholder="Tell me about your project or inquiry..."
                 rows={5}
@@ -71,19 +71,19 @@ export default function Contact() {
                 required
                 style={{
                   width: '100%',
-                  background: 'rgba(139,92,246,0.05)',
-                  border: '1px solid rgba(139,92,246,0.2)',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.08)',
                   borderRadius: '10px',
                   padding: '12px 16px',
-                  color: '#f8fafc',
+                  color: '#fafafa',
                   fontSize: '0.9rem',
                   outline: 'none',
                   resize: 'vertical',
                   transition: 'border-color 0.2s ease',
                   fontFamily: 'inherit',
                 }}
-                onFocus={e => e.target.style.borderColor = 'rgba(139,92,246,0.6)'}
-                onBlur={e => e.target.style.borderColor = 'rgba(139,92,246,0.2)'}
+                onFocus={e => e.target.style.borderColor = 'rgba(192,132,252,0.5)'}
+                onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
               />
             </div>
             <button type="submit" className="btn-primary" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', width: '100%' }}>
@@ -101,7 +101,7 @@ export default function Contact() {
           style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
         >
           <div className="glass-card" style={{ padding: '32px' }}>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', marginBottom: '24px' }}>Contact Information</h2>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fafafa', marginBottom: '24px' }}>Contact Information</h2>
             {[
               { icon: Mail, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
               { icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
@@ -121,15 +121,15 @@ export default function Contact() {
               >
                 <div style={{
                   width: '40px', height: '40px',
-                  background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+                  background: 'linear-gradient(135deg, #f472b6, #c084fc)',
                   borderRadius: '10px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                 }}>
                   <item.icon size={18} color="white" />
                 </div>
                 <div>
-                  <div style={{ color: '#64748b', fontSize: '0.75rem' }}>{item.label}</div>
-                  <div style={{ color: '#c4b5fd', fontSize: '0.875rem', fontWeight: 500 }}>{item.value}</div>
+                  <div style={{ color: '#71717a', fontSize: '0.75rem' }}>{item.label}</div>
+                  <div style={{ color: '#e9d5ff', fontSize: '0.875rem', fontWeight: 500 }}>{item.value}</div>
                 </div>
               </a>
             ))}
@@ -138,15 +138,15 @@ export default function Contact() {
           {/* Open to work */}
           <div style={{
             padding: '24px',
-            background: 'rgba(139,92,246,0.08)',
-            border: '1px solid rgba(139,92,246,0.2)',
+            background: 'rgba(255,255,255,0.03)',
+            border: '1px solid rgba(255,255,255,0.07)',
             borderRadius: '16px',
           }}>
-            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#f8fafc', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ width: 8, height: 8, background: '#22c55e', borderRadius: '50%', boxShadow: '0 0 8px #22c55e', display: 'inline-block' }} />
+            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ width: 8, height: 8, background: '#4ade80', borderRadius: '50%', boxShadow: '0 0 8px #4ade80', display: 'inline-block' }} />
               Open to Opportunities
             </h3>
-            <p style={{ color: '#94a3b8', fontSize: '0.875rem', lineHeight: 1.6 }}>
+            <p style={{ color: '#a1a1aa', fontSize: '0.875rem', lineHeight: 1.6 }}>
               I&apos;m currently seeking full-time opportunities in AI Engineering, Machine Learning, and Software Development. Let&apos;s connect and explore how we can create impact together.
             </p>
           </div>

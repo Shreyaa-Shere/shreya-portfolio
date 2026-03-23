@@ -29,10 +29,10 @@ export default function Skills() {
             <h3 style={{
               fontSize: '1rem',
               fontWeight: 700,
-              color: '#f8fafc',
+              color: '#fafafa',
               marginBottom: '20px',
               paddingLeft: '16px',
-              borderLeft: '3px solid #8b5cf6',
+              borderLeft: '3px solid #f472b6',
             }}>{group.category}</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {group.items.map((skill, j) => (
@@ -48,7 +48,7 @@ export default function Skills() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        style={{ textAlign: 'center', color: '#64748b', fontSize: '0.9rem', marginTop: '48px', fontStyle: 'italic' }}
+        style={{ textAlign: 'center', color: '#71717a', fontSize: '0.9rem', marginTop: '48px', fontStyle: 'italic' }}
       >
         Continuously learning and adapting to emerging technologies in AI and software engineering
       </motion.p>
