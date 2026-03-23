@@ -41,9 +41,9 @@ export default function BackgroundAnimation() {
         text: SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
         x: randomBetween(0, canvas.width),
         y: canvas.height + randomBetween(0, 100),
-        size: randomBetween(11, 18),
+        size: randomBetween(13, 20),
         speed: randomBetween(0.25, 0.7),
-        opacity: randomBetween(0.13, 0.22),
+        opacity: randomBetween(0.28, 0.42),
         drift: randomBetween(-0.15, 0.15),    // gentle horizontal sway
         color,
         life: 0,                               // 0→1 for fade in/out
