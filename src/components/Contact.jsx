@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
