@@ -122,6 +122,14 @@ export const projects = [
     highlights: ["AI-powered risk analysis", "Automated clause detection", "Real-time processing", "Secure authentication"],
     github: "https://github.com/Shreyaa-Shere",
   },
+  {
+    title: "AI Infra Research Dashboard",
+    subtitle: "Full-Stack Internal Research Tool",
+    description: "Full-stack platform for researching and tracking AI infrastructure — hardware products, companies, datacenters, research notes, metrics, and ingested source documents. Features JWT auth with RBAC, markdown research notes with draft/review/publish workflow, time-series metrics with CSV export, and a Celery-powered ingestion pipeline with PostgreSQL full-text search.",
+    tags: ["FastAPI", "React", "TypeScript", "PostgreSQL", "Redis", "Celery", "Docker", "TanStack Query"],
+    highlights: ["JWT auth + RBAC roles", "Full-text search with snippets", "Celery ingestion pipeline", "Redis caching + audit log"],
+    github: "https://github.com/Shreyaa-Shere/ai-infra-research-dashboard",
+  },
 ];
 
 export const leadership = [

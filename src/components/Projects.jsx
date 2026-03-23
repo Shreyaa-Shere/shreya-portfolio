@@ -25,7 +25,15 @@ export default function Projects() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
             className="glass-card"
-            style={{ padding: '32px', display: 'flex', flexDirection: 'column' }}
+            style={{
+              padding: '32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gridColumn: (projects.length % 2 !== 0 && i === projects.length - 1) ? '1 / -1' : undefined,
+              maxWidth: (projects.length % 2 !== 0 && i === projects.length - 1) ? '600px' : undefined,
+              margin: (projects.length % 2 !== 0 && i === projects.length - 1) ? '0 auto' : undefined,
+              width: (projects.length % 2 !== 0 && i === projects.length - 1) ? '100%' : undefined,
+            }}
           >
             <div style={{ flex: 1 }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#f8fafc', marginBottom: '6px' }}>{proj.title}</h3>
