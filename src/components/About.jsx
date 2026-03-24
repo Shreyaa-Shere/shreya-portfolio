@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Brain, Cloud, Code2, GraduationCap } from 'lucide-react';
+import { Server, Code2, GitMerge, GraduationCap } from 'lucide-react';
 import { personalInfo, education, expertise } from '../data/portfolioData';
 
-const iconMap = { Brain, Cloud, Code2 };
+const iconMap = { Server, Code2, GitMerge };
 
 export default function About() {
   return (

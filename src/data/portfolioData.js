@@ -31,19 +31,19 @@ export const education = [
 
 export const expertise = [
   {
-    icon: "Brain",
-    title: "Machine Learning & NLP",
-    desc: "Advanced expertise in LLM deployment, fine-tuning, and RAG pipelines",
-  },
-  {
-    icon: "Cloud",
-    title: "Cloud Computing",
-    desc: "Proficient in AWS, Azure DevOps, and scalable system architecture",
+    icon: "Server",
+    title: "Backend Development & APIs",
+    desc: "Building scalable backend systems and RESTful APIs with a focus on reliability and performance",
   },
   {
     icon: "Code2",
     title: "Full-Stack Development",
-    desc: "Building production-ready applications with modern frameworks",
+    desc: "Delivering end-to-end web applications — from responsive frontends to production-ready server-side logic",
+  },
+  {
+    icon: "GitMerge",
+    title: "System Design & Engineering",
+    desc: "Designing maintainable software systems with clean architecture, CI/CD pipelines, and Agile practices",
   },
 ];
 
