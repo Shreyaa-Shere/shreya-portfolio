@@ -1,14 +1,14 @@
 export const personalInfo = {
   name: "Shreya Shere",
   tagline: "GHC '25",
-  role: "AI Engineer + Developer",
+  role: "Software Engineer",
   email: "sshere2@asu.edu",
   phone: "(602) 804-3692",
   linkedin: "linkedin.com/in/shreya-shere",
   github: "github.com/Shreyaa-Shere",
   linkedinUrl: "https://linkedin.com/in/shreya-shere",
   githubUrl: "https://github.com/Shreyaa-Shere",
-  bio1: "Graduate Software Engineering student at Arizona State University with 2+ years of industry experience building scalable backend systems, data-driven applications, and intelligent platforms.",
+  bio1: "MS Software Engineering candidate at Arizona State University with 2+ years of industry experience building production-grade applications, scalable backend systems, and APIs. Passionate about writing clean, reliable software that solves real problems.",
   bio2: "I create reliable software that powers real users through analytics, automation, and performance-focused solutions.",
   bioLong: "I'm a Software Engineer and AI specialist pursuing my Master's in Software Engineering at Arizona State University (GPA: 3.96). I design scalable, responsible AI solutions ranging from clinical summarization systems that cut documentation time by 40% to automation agents that reduced workflows by 50%.",
   bioLong2: "With over two years of enterprise experience at Capgemini, I've built production-ready systems that balance technical excellence with user empathy. My goal is to create human-centered AI that turns research into real-world solutions, helping people focus on meaningful work.",
@@ -160,6 +160,6 @@ export const values = [
 export const stats = [
   { value: "2+", label: "Years Experience" },
   { value: "3.96", label: "GPA at ASU" },
-  { value: "10+", label: "Projects Built" },
+  { value: "20%", label: "Reduction in Production Issues" },
   { value: "50%", label: "Workflow Reduction" },
 ];
