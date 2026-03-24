@@ -10,8 +10,8 @@ export const personalInfo = {
   githubUrl: "https://github.com/Shreyaa-Shere",
   bio1: "MS Software Engineering candidate at Arizona State University with 2+ years of industry experience building production-grade applications, scalable backend systems, and APIs. Passionate about writing clean, reliable software that solves real problems.",
   bio2: "I create reliable software that powers real users through analytics, automation, and performance-focused solutions.",
-  bioLong: "I'm a Software Engineer and AI specialist pursuing my Master's in Software Engineering at Arizona State University (GPA: 3.96). I design scalable, responsible AI solutions ranging from clinical summarization systems that cut documentation time by 40% to automation agents that reduced workflows by 50%.",
-  bioLong2: "With over two years of enterprise experience at Capgemini, I've built production-ready systems that balance technical excellence with user empathy. My goal is to create human-centered AI that turns research into real-world solutions, helping people focus on meaningful work.",
+  bioLong: "I'm a Software Engineer with 2+ years of industry experience designing and building scalable, production-grade software. I've worked across the full development lifecycle — from translating business requirements into technical solutions to deploying and maintaining live systems used by real users.",
+  bioLong2: "I'm currently pursuing my Master's in Software Engineering at Arizona State University (GPA: 3.96), where I've continued growing through hands-on projects and research. I'm actively seeking full-time SWE roles where I can contribute meaningfully from day one.",
 };
 
 export const education = [
