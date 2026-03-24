@@ -48,22 +48,37 @@ export default function Hero() {
 
         {/* LEFT — Text */}
         <div>
-          {/* Badge */}
+          {/* Badges */}
           <motion.div
-            className="hero-badge"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '50px', padding: '7px 16px',
-              marginBottom: '20px', fontSize: '0.85rem', color: '#d4d4d8',
-            }}
+            style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}
           >
-            <span style={{ width: 8, height: 8, background: '#4ade80', borderRadius: '50%', boxShadow: '0 0 8px #4ade80', display: 'inline-block', flexShrink: 0 }} />
-            Open to opportunities · {personalInfo.tagline}
+            <div
+              className="hero-badge"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '50px', padding: '7px 16px',
+                fontSize: '0.85rem', color: '#d4d4d8',
+              }}
+            >
+              <span style={{ width: 8, height: 8, background: '#4ade80', borderRadius: '50%', boxShadow: '0 0 8px #4ade80', display: 'inline-block', flexShrink: 0 }} />
+              Open to opportunities
+            </div>
+            <div
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'rgba(168,85,247,0.1)',
+                border: '1px solid rgba(168,85,247,0.3)',
+                borderRadius: '50px', padding: '7px 16px',
+                fontSize: '0.85rem', color: '#c084fc',
+              }}
+            >
+              ✦ {personalInfo.tagline} Attendee
+            </div>
           </motion.div>
 
           <motion.div
@@ -112,7 +127,7 @@ export default function Hero() {
             <Link to="/contact" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               Hire Me <ArrowRight size={15} />
             </Link>
-            <a href="#" className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <a href="/ShreyaShereResume.pdf" target="_blank" rel="noreferrer" className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FileText size={15} /> Resume
             </a>
             <div style={{ display: 'flex', gap: '12px', marginLeft: '4px' }}>
