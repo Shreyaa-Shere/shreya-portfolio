@@ -6,7 +6,7 @@ const iconMap = { Server, Code2, GitMerge };
 
 export default function About() {
   return (
-    <section className="page-wrap">
+    <section className="page-wrap" style={{ paddingTop: '72px' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
