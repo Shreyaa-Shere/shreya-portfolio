@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Command } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -12,7 +12,7 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onOpenPalette }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -84,6 +84,40 @@ export default function Navbar() {
         ))}
       </div>
 
+      {/* Command palette trigger — desktop */}
+      <button
+        onClick={onOpenPalette}
+        className="hidden-mobile"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '7px',
+          padding: '8px 14px',
+          background: 'rgba(255,255,255,0.04)',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderRadius: '50px',
+          color: '#71717a',
+          fontSize: '0.8rem',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease',
+          fontFamily: 'Inter, system-ui, sans-serif',
+        }}
+        onMouseEnter={e => {
+          e.currentTarget.style.borderColor = 'rgba(192,132,252,0.35)';
+          e.currentTarget.style.color = '#c084fc';
+          e.currentTarget.style.background = 'rgba(192,132,252,0.07)';
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+          e.currentTarget.style.color = '#71717a';
+          e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
+        }}
+        title="Open command palette (Ctrl+K)"
+      >
+        <Command size={13} />
+        <span>Ctrl K</span>
+      </button>
+
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
@@ -125,6 +159,38 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+          <button
+            onClick={() => { setMobileOpen(false); onOpenPalette(); }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              padding: '12px 20px',
+              borderRadius: '12px',
+              border: '1px solid rgba(192,132,252,0.2)',
+              background: 'rgba(192,132,252,0.06)',
+              color: '#c084fc',
+              fontSize: '0.95rem',
+              cursor: 'pointer',
+              marginTop: '4px',
+              fontFamily: 'Inter, system-ui, sans-serif',
+              width: '100%',
+              textAlign: 'left',
+            }}
+          >
+            <Command size={15} />
+            Command palette
+            <kbd style={{
+              marginLeft: 'auto',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '4px',
+              padding: '1px 7px',
+              fontSize: '0.72rem',
+              color: '#71717a',
+              fontFamily: 'monospace',
+            }}>Ctrl K</kbd>
+          </button>
         </div>
       )}
     </nav>
