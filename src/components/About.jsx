@@ -19,7 +19,7 @@ export default function About() {
       </motion.div>
 
       {/* Bio */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '36px', marginBottom: '64px', alignItems: 'start' }} className="about-grid">
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '36px', marginBottom: '64px', alignItems: 'center' }} className="about-grid">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ export default function About() {
                 width: '100%',
                 height: '420px',
                 objectFit: 'cover',
-                objectPosition: 'center 78%',
+                objectPosition: 'center 58%',
                 display: 'block',
               }}
             />
@@ -68,11 +68,11 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#fafafa', marginBottom: '12px' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#fafafa', marginBottom: '18px' }}>
             Hi, I&apos;m {personalInfo.name}
           </h2>
-          <p style={{ color: '#a1a1aa', lineHeight: 1.7, marginBottom: '12px', fontSize: '0.95rem' }}>{personalInfo.bioLong}</p>
-          <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '0.95rem' }}>{personalInfo.bioLong2}</p>
+          <p style={{ color: '#a1a1aa', lineHeight: 1.85, marginBottom: '18px', fontSize: '1rem' }}>{personalInfo.bioLong}</p>
+          <p style={{ color: '#a1a1aa', lineHeight: 1.85, fontSize: '1rem' }}>{personalInfo.bioLong2}</p>
         </motion.div>
       </div>
 
