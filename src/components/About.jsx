@@ -47,9 +47,9 @@ export default function About() {
               alt="Shreya Shere"
               style={{
                 width: '100%',
-                height: '360px',
+                height: '420px',
                 objectFit: 'cover',
-                objectPosition: 'center 18%',
+                objectPosition: 'center 78%',
                 display: 'block',
               }}
             />
