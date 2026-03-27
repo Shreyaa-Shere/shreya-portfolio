@@ -17,7 +17,7 @@ export default function Hero() {
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
-        padding: '0 48px',
+        padding: '72px 48px 0',
         position: 'relative',
         overflow: 'hidden',
         maxWidth: '1300px',
