@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,9 +10,13 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import CommandPalette from './components/CommandPalette';
+import SideNav from './components/SideNav';
 
-function AppInner() {
+export const SECTION_IDS = ['home', 'about', 'skills', 'experience', 'projects', 'leadership', 'contact'];
+
+export default function App() {
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const openPalette  = useCallback(() => setPaletteOpen(true),  []);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -30,39 +33,37 @@ function AppInner() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  return (
-    <>
-      <CommandPalette open={paletteOpen} onClose={closePalette} />
-      <Routes>
-        <Route path="/"           element={<PageWrapper onOpenPalette={openPalette}><Hero /></PageWrapper>} />
-        <Route path="/about"      element={<PageWrapper onOpenPalette={openPalette}><About /></PageWrapper>} />
-        <Route path="/skills"     element={<PageWrapper onOpenPalette={openPalette}><Skills /></PageWrapper>} />
-        <Route path="/experience" element={<PageWrapper onOpenPalette={openPalette}><Experience /></PageWrapper>} />
-        <Route path="/projects"   element={<PageWrapper onOpenPalette={openPalette}><Projects /></PageWrapper>} />
-        <Route path="/leadership" element={<PageWrapper onOpenPalette={openPalette}><Leadership /></PageWrapper>} />
-        <Route path="/contact"    element={<PageWrapper onOpenPalette={openPalette}><Contact /></PageWrapper>} />
-      </Routes>
-    </>
-  );
-}
+  /* Scroll-based active section tracking */
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollMid = window.scrollY + window.innerHeight * 0.4;
+      let current = SECTION_IDS[0];
+      for (const id of SECTION_IDS) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollMid) current = id;
+      }
+      setActiveSection(current);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-function PageWrapper({ children, onOpenPalette }) {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+    <div style={{ position: 'relative' }}>
       <BackgroundAnimation />
-      <Navbar onOpenPalette={onOpenPalette} />
-      <main style={{ flex: 1, position: 'relative', zIndex: 1 }}>
-        {children}
-      </main>
+      <CommandPalette open={paletteOpen} onClose={closePalette} />
+      <Navbar activeSection={activeSection} onOpenPalette={openPalette} />
+      <SideNav activeSection={activeSection} />
+
+      <div id="home"><Hero /></div>
+      <div id="about"><About /></div>
+      <div id="skills"><Skills /></div>
+      <div id="experience"><Experience /></div>
+      <div id="projects"><Projects /></div>
+      <div id="leadership"><Leadership /></div>
+      <div id="contact"><Contact /></div>
       <Footer />
     </div>
-  );
-}
-
-export default function App() {
-  return (
-    <Router>
-      <AppInner />
-    </Router>
   );
 }

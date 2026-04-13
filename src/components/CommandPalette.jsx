@@ -1,16 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Home, User, Code2, Briefcase, FolderOpen, Star, Mail, ArrowRight } from 'lucide-react';
 
 const pages = [
-  { name: 'Home',       path: '/',           icon: Home,       desc: 'Landing page'               },
-  { name: 'About',      path: '/about',      icon: User,       desc: 'Who I am'                   },
-  { name: 'Skills',     path: '/skills',     icon: Code2,      desc: 'Technical skills & tools'   },
-  { name: 'Experience', path: '/experience', icon: Briefcase,  desc: 'Work history'                },
-  { name: 'Projects',   path: '/projects',   icon: FolderOpen, desc: "What I've built"             },
-  { name: 'Leadership', path: '/leadership', icon: Star,       desc: 'Leadership roles'            },
-  { name: 'Contact',    path: '/contact',    icon: Mail,       desc: 'Get in touch'                },
+  { name: 'Home',       id: 'home',       icon: Home,       desc: 'Landing page'               },
+  { name: 'About',      id: 'about',      icon: User,       desc: 'Who I am'                   },
+  { name: 'Skills',     id: 'skills',     icon: Code2,      desc: 'Technical skills & tools'   },
+  { name: 'Experience', id: 'experience', icon: Briefcase,  desc: 'Work history'                },
+  { name: 'Projects',   id: 'projects',   icon: FolderOpen, desc: "What I've built"             },
+  { name: 'Leadership', id: 'leadership', icon: Star,       desc: 'Leadership roles'            },
+  { name: 'Contact',    id: 'contact',    icon: Mail,       desc: 'Get in touch'                },
 ];
 
 export default function CommandPalette({ open, onClose }) {
@@ -18,7 +17,6 @@ export default function CommandPalette({ open, onClose }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const inputRef  = useRef(null);
   const listRef   = useRef(null);
-  const navigate  = useNavigate();
 
   const filtered = query.trim()
     ? pages.filter(p =>
@@ -45,10 +43,10 @@ export default function CommandPalette({ open, onClose }) {
     el?.scrollIntoView({ block: 'nearest' });
   }, [activeIndex]);
 
-  const go = useCallback((path) => {
-    navigate(path);
+  const go = useCallback((id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     onClose();
-  }, [navigate, onClose]);
+  }, [onClose]);
 
   /* Keyboard navigation */
   useEffect(() => {
@@ -61,7 +59,7 @@ export default function CommandPalette({ open, onClose }) {
         e.preventDefault();
         setActiveIndex(i => (i - 1 + filtered.length) % filtered.length);
       } else if (e.key === 'Enter') {
-        if (filtered[activeIndex]) go(filtered[activeIndex].path);
+        if (filtered[activeIndex]) go(filtered[activeIndex].id);
       } else if (e.key === 'Escape') {
         onClose();
       }
@@ -183,8 +181,8 @@ export default function CommandPalette({ open, onClose }) {
                     const isActive = i === activeIndex;
                     return (
                       <button
-                        key={page.path}
-                        onClick={() => go(page.path)}
+                        key={page.id}
+                        onClick={() => go(page.id)}
                         onMouseEnter={() => setActiveIndex(i)}
                         style={{
                           width: '100%',

@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Command } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Skills', path: '/skills' },
-  { name: 'Experience', path: '/experience' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Leadership', path: '/leadership' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Home',       id: 'home'       },
+  { name: 'About',      id: 'about'      },
+  { name: 'Skills',     id: 'skills'     },
+  { name: 'Experience', id: 'experience' },
+  { name: 'Projects',   id: 'projects'   },
+  { name: 'Leadership', id: 'leadership' },
+  { name: 'Contact',    id: 'contact'    },
 ];
 
-export default function Navbar({ onOpenPalette }) {
-  const [scrolled, setScrolled] = useState(false);
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+export default function Navbar({ activeSection, onOpenPalette }) {
+  const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -40,17 +42,22 @@ export default function Navbar({ onOpenPalette }) {
       justifyContent: 'space-between',
     }}>
       {/* Logo */}
-      <Link to="/" style={{
-        fontSize: '1.25rem',
-        fontWeight: 800,
-        background: 'linear-gradient(135deg, #f472b6, #c084fc)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-        textDecoration: 'none',
-      }}>SS</Link>
+      <button
+        onClick={() => scrollTo('home')}
+        style={{
+          fontSize: '1.25rem',
+          fontWeight: 800,
+          background: 'linear-gradient(135deg, #f472b6, #c084fc)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          border: 'none',
+          cursor: 'pointer',
+          padding: 0,
+        }}
+      >SS</button>
 
-      {/* Desktop Nav - pill style */}
+      {/* Desktop Nav — pill style */}
       <div
         className="hidden-mobile"
         style={{
@@ -62,26 +69,30 @@ export default function Navbar({ onOpenPalette }) {
           padding: '6px',
         }}
       >
-        {navLinks.map(link => (
-          <Link
-            key={link.path}
-            to={link.path}
-            style={{
-              padding: '8px 18px',
-              borderRadius: '50px',
-              fontSize: '0.875rem',
-              fontWeight: 500,
-              textDecoration: 'none',
-              transition: 'all 0.2s ease',
-              background: location.pathname === link.path
-                ? 'linear-gradient(135deg, #f472b6, #c084fc)'
-                : 'transparent',
-              color: location.pathname === link.path ? 'white' : '#a1a1aa',
-            }}
-          >
-            {link.name}
-          </Link>
-        ))}
+        {navLinks.map(link => {
+          const isActive = activeSection === link.id;
+          return (
+            <button
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              style={{
+                padding: '8px 18px',
+                borderRadius: '50px',
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                background: isActive
+                  ? 'linear-gradient(135deg, #f472b6, #c084fc)'
+                  : 'transparent',
+                color: isActive ? 'white' : '#a1a1aa',
+              }}
+            >
+              {link.name}
+            </button>
+          );
+        })}
       </div>
 
       {/* Command palette trigger — desktop */}
@@ -143,21 +154,22 @@ export default function Navbar({ onOpenPalette }) {
           gap: '4px',
         }}>
           {navLinks.map(link => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setMobileOpen(false)}
+            <button
+              key={link.id}
+              onClick={() => { scrollTo(link.id); setMobileOpen(false); }}
               style={{
                 padding: '12px 20px',
                 borderRadius: '12px',
                 fontSize: '0.95rem',
-                textDecoration: 'none',
-                color: location.pathname === link.path ? '#c084fc' : '#a1a1aa',
-                background: location.pathname === link.path ? 'rgba(192,132,252,0.08)' : 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'left',
+                color: activeSection === link.id ? '#c084fc' : '#a1a1aa',
+                background: activeSection === link.id ? 'rgba(192,132,252,0.08)' : 'transparent',
               }}
             >
               {link.name}
-            </Link>
+            </button>
           ))}
           <button
             onClick={() => { setMobileOpen(false); onOpenPalette(); }}

@@ -1,14 +1,8 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, FileText, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { personalInfo, stats } from '../data/portfolioData';
 
 export default function Hero() {
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, []);
 
   return (
     <section
@@ -124,9 +118,13 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '36px' }}
           >
-            <Link to="/contact" className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button
+              className="btn-primary"
+              style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Hire Me <ArrowRight size={15} />
-            </Link>
+            </button>
             <a href="/ShreyaShereResume.pdf" target="_blank" rel="noreferrer" className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FileText size={15} /> Resume
             </a>
