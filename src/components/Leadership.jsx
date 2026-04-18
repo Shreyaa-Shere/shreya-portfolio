@@ -6,7 +6,7 @@ const iconMap = { Users, Code2, Trophy, Heart };
 
 export default function Leadership() {
   return (
-    <section className="page-wrap" style={{ maxWidth: '900px' }}>
+    <section className="page-wrap" style={{ maxWidth: '1100px' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

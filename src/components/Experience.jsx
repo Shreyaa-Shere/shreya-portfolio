@@ -4,7 +4,7 @@ import { experience } from '../data/portfolioData';
 
 export default function Experience() {
   return (
-    <section className="page-wrap" style={{ maxWidth: '860px' }}>
+    <section className="page-wrap" style={{ maxWidth: '1100px' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
