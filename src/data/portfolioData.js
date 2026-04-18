@@ -8,10 +8,10 @@ export const personalInfo = {
   github: "github.com/Shreyaa-Shere",
   linkedinUrl: "https://linkedin.com/in/shreya-shere",
   githubUrl: "https://github.com/Shreyaa-Shere",
-  bio1: "MS Software Engineering candidate at Arizona State University with 2+ years of industry experience building production-grade applications, scalable backend systems, and APIs. Passionate about writing clean, reliable software that solves real problems.",
-  bio2: "I create reliable software that powers real users through analytics, automation, and performance-focused solutions.",
-  bioLong: "I'm a Software Engineer with 2+ years of industry experience designing and building scalable, production-grade software. I've worked across the full development lifecycle — from translating business requirements into technical solutions to deploying and maintaining live systems used by real users.",
-  bioLong2: "I'm currently pursuing my Master's in Software Engineering at Arizona State University (GPA: 3.96), where I've continued growing through hands-on projects and research. I'm actively seeking full-time SWE roles where I can contribute meaningfully from day one.",
+  bio1: "Senior Software Engineer with 4.5+ years of experience designing and scaling distributed systems, real-time data platforms, and AI-driven applications across finance and healthcare domains.",
+  bio2: "Expertise in high-throughput microservices and event-driven architectures using Java, Spring Boot, Kafka, Kubernetes, and AWS — with hands-on experience integrating LLM-based solutions and RAG pipelines.",
+  bioLong: "I'm a Senior Software Engineer with 4.5+ years of experience designing and scaling distributed systems, real-time data platforms, and AI-driven applications across finance and healthcare domains. I specialize in building high-throughput microservices and event-driven architectures using Java, Spring Boot, Kafka, Kubernetes, and AWS.",
+  bioLong2: "I'm currently pursuing my Master's in Software Engineering at Arizona State University (GPA: 3.96). I'm actively seeking full-time SWE roles where I can own end-to-end systems from architecture and development to deployment, with a focus on scalability, performance, and reliability.",
 };
 
 export const education = [
@@ -49,58 +49,87 @@ export const expertise = [
 
 export const skills = [
   {
-    category: "Languages & Databases",
-    items: ["Python", "Java", "C", "JavaScript", "SQL", "PostgreSQL", "MongoDB"],
+    category: "Languages",
+    items: ["TypeScript", "JavaScript", "Java", "Python", "SQL"],
   },
   {
-    category: "AI/ML & Data Libraries",
-    items: ["LangChain", "TensorFlow", "Hugging Face", "NumPy", "Pandas", "OpenCV", "Matplotlib", "Plotly"],
+    category: "Frontend",
+    items: ["Angular (10+)", "React.js", "Next.js", "Redux", "Bootstrap 5", "HTML5", "CSS3", "Tailwind CSS"],
   },
   {
-    category: "Frameworks & Tools",
-    items: ["FastAPI", "Streamlit", "Docker", "GitHub Actions", "AWS", "Azure DevOps"],
+    category: "Backend",
+    items: ["Node.js", "Spring Boot", "Django", "J2EE", "Express"],
   },
   {
-    category: "Specialized Expertise",
-    items: ["LLM Deployment", "Fine-Tuning", "RAG Pipelines", "NLP Workflows", "Model Evaluation", "Data Wrangling"],
+    category: "Cloud & Platforms",
+    items: ["AWS (CloudFront, S3, Lambda, API Gateway, Amplify)", "GCP (Firebase, Cloud Functions, Storage)"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "DynamoDB", "Firebase Realtime DB"],
+  },
+  {
+    category: "Streaming & Messaging",
+    items: ["Apache Kafka", "RabbitMQ"],
+  },
+  {
+    category: "DevOps & Tools",
+    items: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Git", "Postman", "JIRA", "Figma"],
+  },
+  {
+    category: "Testing",
+    items: ["Jest", "Cypress", "Enzyme", "Lighthouse", "JUnit", "Mockito"],
+  },
+  {
+    category: "AI & Generative AI",
+    items: ["OpenAI APIs", "GPT", "RAG Pipelines", "Prompt Engineering", "Claude API", "Claude Code", "Anthropic SDK"],
   },
 ];
 
 export const experience = [
   {
-    title: "Senior Software Developer",
+    title: "Senior Software Engineer",
     company: "Capgemini Technology Services India Ltd.",
     period: "Jun 2023 – Jun 2024",
-    location: "Bangalore, India",
-    bullets: [
-      "Supported production operations through application monitoring, troubleshooting, and post-deployment support.",
-      "Collaborated with cross-functional teams to drive solutions, resolve ambiguity, and deliver features in an agile environment.",
-      "Developed custom WordPress themes and plugins from scratch using PHP and JavaScript for client-specific functionality.",
-      "Improved code quality by writing and maintaining unit tests and validation checks, reducing production issues by ~20%.",
-    ],
-  },
-  {
-    title: "Software Developer",
-    company: "Capgemini Technology Services India Ltd.",
-    period: "May 2022 – Jun 2023",
-    location: "Bangalore, India",
-    bullets: [
-      "Developed customer-facing web applications using HTML, CSS, Bootstrap, JavaScript, PHP, and WordPress.",
-      "Owned end-to-end development of client websites, collaborating closely with design, business, and testing teams.",
-      "Built KPI dashboards tracking page visits, clicks, views, and time-on-site to support data-driven client decisions.",
-      "Optimized frontend performance and backend workflows, reducing page load time by ~35% and improving site reliability.",
-    ],
-  },
-  {
-    title: "Software Developer Intern",
-    company: "Capgemini Technology Services India Ltd.",
-    period: "Mar 2022 – May 2022",
     location: "India",
     bullets: [
-      "Developed and tested application features using Java while following object-oriented design principles.",
-      "Applied core data structures and basic algorithms in Java to solve programming tasks and improve efficiency.",
-      "Assisted in debugging and refactoring Java code to enhance readability, maintainability, and performance.",
-      "Participated in code reviews and testing cycles to understand SDLC practices and production-quality standards.",
+      "Designed and owned a high-throughput distributed platform using Spring Boot, Node.js, and React.js to aggregate real-time financial data from multiple sources, enabling low-latency dashboards used by 1,000+ global analysts.",
+      "Architected an event-driven microservices platform using Docker, Kubernetes, Apache Kafka, and RabbitMQ, implementing parallel processing and fault-tolerant workflows to automate settlement reconciliation, reducing processing time to under 40 minutes per batch.",
+      "Designed and scaled 100+ RESTful and GraphQL APIs secured with OAuth2, handling 300,000+ API calls daily with high availability and resilience.",
+      "Implemented unified observability by centralizing metrics via CloudWatch and integrating Prometheus and Grafana dashboards, reducing incident resolution time to under 15 minutes.",
+      "Designed and optimized large-scale search infrastructure using Elasticsearch, indexing 6M+ trade records and enabling 70,000+ sub-second queries.",
+      "Integrated LLM-based systems using OpenAI APIs and RAG pipelines to build context-aware trade summarization tools, reducing manual effort by 40%.",
+      "Led CI/CD and release engineering strategy using Git, Docker, and Kubernetes, enabling zero-downtime deployments and rollback strategies.",
+      "Mentored engineers and led design reviews, improving code quality and authoring architecture and API documentation.",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company: "Capgemini Technology Services India Ltd.",
+    period: "Mar 2022 – Jun 2023",
+    location: "India",
+    bullets: [
+      "Designed and delivered scalable frontend architecture using Angular (10+) and TypeScript for healthcare workflows, improving usability and reliability of clinician-facing applications.",
+      "Built and owned secure backend services and APIs using Node.js and Express, handling 10,000+ concurrent requests with high availability.",
+      "Implemented AI-driven summarization systems using cron jobs and OpenAI APIs, enabling efficient processing of large-scale datasets.",
+      "Developed high-performance UI components using React.js and Redux, applying lazy loading and memoization to significantly improve page load times.",
+      "Led frontend modernization by migrating legacy CSS systems to Tailwind CSS, improving scalability and maintainability across 5+ applications.",
+      "Optimized backend performance through indexing, caching, and query optimization, reducing infrastructure costs by 20%.",
+      "Established cloud-native deployment pipelines using Docker and Terraform, enabling automated infrastructure provisioning and reliable deployments.",
+    ],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "Zensar Technologies",
+    period: "Aug 2020 – Mar 2022",
+    location: "India",
+    bullets: [
+      "Refactored and optimized backend services and data models using Node.js and MongoDB for financial transaction systems, improving data consistency and throughput across distributed systems.",
+      "Enhanced scalability and performance for a financial reporting platform handling 200,000+ daily transactions via caching strategies and query optimization.",
+      "Migrated legacy frontend systems from AngularJS to Angular (6+), improving responsiveness and usability for 5,000+ users.",
+      "Designed and implemented API testing frameworks using Postman, integrating automated testing into CI pipelines to reduce deployment defects.",
+      "Automated operational workflows using Python and Bash scripting for log management and audit reporting, reducing manual effort by 60+ hours per month.",
+      "Designed scalable data pipelines using Apache Kafka for real-time batch processing, improving data availability and analytics performance.",
     ],
   },
 ];
@@ -158,7 +187,7 @@ export const values = [
 ];
 
 export const stats = [
-  { value: "2+", label: "Years Experience" },
+  { value: "4.5+", label: "Years Experience" },
   { value: "3.96", label: "GPA at ASU" },
   { value: "20%", label: "Reduction in Production Issues" },
   { value: "50%", label: "Workflow Reduction" },
