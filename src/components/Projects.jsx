@@ -25,7 +25,7 @@ function ProjectCard({ proj, index, isOdd }) {
         position: 'relative',
         borderRadius: '18px',
         overflow: 'hidden',
-        height: '340px',
+        height: '440px',
         cursor: 'pointer',
         gridColumn: isOdd ? '1 / -1' : undefined,
         maxWidth: isOdd ? '580px' : undefined,
