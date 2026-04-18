@@ -20,21 +20,15 @@ export default function Hero() {
     >
       {/* Aurora background blobs */}
       <div style={{
-        position: 'fixed', top: '0%', right: '0%',
-        width: '700px', height: '700px',
-        background: 'radial-gradient(ellipse, rgba(244,114,182,0.13) 0%, transparent 65%)',
-        pointerEvents: 'none', zIndex: 0,
-      }} />
-      <div style={{
         position: 'fixed', bottom: '0%', left: '0%',
         width: '600px', height: '600px',
-        background: 'radial-gradient(ellipse, rgba(129,140,248,0.10) 0%, transparent 65%)',
+        background: 'radial-gradient(ellipse, rgba(129,140,248,0.08) 0%, transparent 65%)',
         pointerEvents: 'none', zIndex: 0,
       }} />
       <div style={{
         position: 'fixed', top: '40%', left: '30%',
         width: '500px', height: '500px',
-        background: 'radial-gradient(ellipse, rgba(192,132,252,0.07) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse, rgba(192,132,252,0.05) 0%, transparent 60%)',
         pointerEvents: 'none', zIndex: 0,
       }} />
 
