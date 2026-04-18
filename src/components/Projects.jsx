@@ -40,11 +40,12 @@ function ProjectCard({ proj, index }) {
 
       {/* Watermark */}
       <div style={{
-        position: 'absolute', bottom: '90px', right: '-8px', zIndex: 2,
-        fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 900,
-        color: 'rgba(255,255,255,0.07)', letterSpacing: '-0.03em',
-        whiteSpace: 'nowrap', userSelect: 'none', pointerEvents: 'none',
+        position: 'absolute', bottom: '100px', left: '16px', right: '16px', zIndex: 2,
+        fontSize: '2rem', fontWeight: 900, lineHeight: 1.15,
+        color: 'rgba(255,255,255,0.08)', letterSpacing: '-0.02em',
+        userSelect: 'none', pointerEvents: 'none',
         transition: 'opacity 0.3s ease', opacity: hovered ? 0 : 1,
+        wordBreak: 'break-word',
       }}>{proj.title}</div>
 
       {/* Resting info */}
@@ -130,7 +131,7 @@ export default function Projects() {
   const cols = projects.length === 3 ? 3 : 2;
 
   return (
-    <section className="page-wrap">
+    <section className="page-wrap" style={{ maxWidth: '1300px' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
