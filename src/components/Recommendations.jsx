@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Quote, Linkedin } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { recommendations } from '../data/portfolioData';
 
 function Initials({ name }) {
@@ -58,23 +58,7 @@ export default function Recommendations() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '28px' }}>
               <Initials name={rec.name} />
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fafafa' }}>{rec.name}</h3>
-                  <a
-                    href={rec.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: '#818cf8', display: 'flex', alignItems: 'center', transition: 'color 0.2s' }}
-                    onMouseOver={e => e.currentTarget.style.color = '#f472b6'}
-                    onMouseOut={e => e.currentTarget.style.color = '#818cf8'}
-                    title="View on LinkedIn"
-                  >
-                    <Linkedin size={15} />
-                  </a>
-                </div>
-                <p style={{ color: '#71717a', fontSize: '0.78rem', lineHeight: 1.5, margin: '4px 0', maxWidth: '560px' }}>
-                  {rec.title}
-                </p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fafafa' }}>{rec.name}</h3>
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginTop: '4px' }}>
                   <span style={{ fontSize: '0.75rem', color: '#a1a1aa' }}>{rec.date}</span>
                   <span style={{ fontSize: '0.75rem', color: '#c084fc', fontStyle: 'italic' }}>{rec.relationship}</span>
@@ -104,15 +88,14 @@ export default function Recommendations() {
         ))}
       </div>
 
-      {/* LinkedIn attribution */}
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        style={{ textAlign: 'center', color: '#52525b', fontSize: '0.8rem', marginTop: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
+        style={{ textAlign: 'center', color: '#52525b', fontSize: '0.8rem', marginTop: '48px', fontStyle: 'italic' }}
       >
-        <Linkedin size={13} /> Recommendations received on LinkedIn
+        Recommendations received on LinkedIn
       </motion.p>
     </section>
   );
