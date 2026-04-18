@@ -34,13 +34,6 @@ export default function About() {
             background: 'linear-gradient(135deg, #f472b6, #c084fc, #818cf8)',
             zIndex: 0, filter: 'blur(1px)',
           }} />
-          {/* Glow */}
-          <div style={{
-            position: 'absolute', inset: '-18px',
-            borderRadius: '32px',
-            background: 'radial-gradient(circle, rgba(244,114,182,0.2) 0%, transparent 70%)',
-            zIndex: 0,
-          }} />
           <div style={{ position: 'relative', zIndex: 1, borderRadius: '20px', overflow: 'hidden' }}>
             <img
               src="/shreya-about.jpg"
