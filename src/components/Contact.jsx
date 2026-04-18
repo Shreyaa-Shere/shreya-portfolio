@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Mail, Phone, Linkedin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
-const FORMSPREE_ID = 'YOUR_FORM_ID'; // replace with your ID from formspree.io
+const FORMSPREE_ID = 'meevkarl';
 
 export default function Contact() {
   const [form, setForm]     = useState({ name: '', email: '', message: '' });
