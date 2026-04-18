@@ -6,13 +6,14 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Leadership from './components/Leadership';
+import Recommendations from './components/Recommendations';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import CommandPalette from './components/CommandPalette';
 import SideNav from './components/SideNav';
 
-export const SECTION_IDS = ['home', 'about', 'skills', 'experience', 'projects', 'leadership', 'contact'];
+export const SECTION_IDS = ['home', 'about', 'skills', 'experience', 'projects', 'leadership', 'recommendations', 'contact'];
 
 export default function App() {
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -62,6 +63,7 @@ export default function App() {
       <div id="experience"><Experience /></div>
       <div id="projects"><Projects /></div>
       <div id="leadership"><Leadership /></div>
+      <div id="recommendations"><Recommendations /></div>
       <div id="contact"><Contact /></div>
       <Footer />
     </div>

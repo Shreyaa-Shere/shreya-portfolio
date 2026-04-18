@@ -7,8 +7,9 @@ const SECTIONS = [
   { id: 'skills',     label: 'Skills'     },
   { id: 'experience', label: 'Experience' },
   { id: 'projects',   label: 'Projects'   },
-  { id: 'leadership', label: 'Leadership' },
-  { id: 'contact',    label: 'Contact'    },
+  { id: 'leadership',      label: 'Leadership'      },
+  { id: 'recommendations', label: 'Recommendations' },
+  { id: 'contact',         label: 'Contact'         },
 ];
 
 export default function SideNav({ activeSection }) {

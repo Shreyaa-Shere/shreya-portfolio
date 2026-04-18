@@ -7,8 +7,9 @@ const navLinks = [
   { name: 'Skills',     id: 'skills'     },
   { name: 'Experience', id: 'experience' },
   { name: 'Projects',   id: 'projects'   },
-  { name: 'Leadership', id: 'leadership' },
-  { name: 'Contact',    id: 'contact'    },
+  { name: 'Leadership',       id: 'leadership'      },
+  { name: 'Recommendations', id: 'recommendations' },
+  { name: 'Contact',         id: 'contact'         },
 ];
 
 function scrollTo(id) {

@@ -162,6 +162,34 @@ export const projects = [
   },
 ];
 
+export const recommendations = [
+  {
+    name: "Ashish Kumar",
+    title: "Site Reliability Engineer | DevOps Engineer | Kubernetes(CKA) | Docker | Terraform | CI/CD | Jenkins | Azure | Prometheus | Grafana | 4xMicrosoft Certified",
+    date: "October 31, 2025",
+    relationship: "Worked with Shreya at Capgemini on different teams",
+    linkedin: "https://www.linkedin.com/in/ashish-kumar",
+    paragraphs: [
+      "I had the opportunity to work with Shreya at Capgemini, and what truly stood out to me was her ability to take initiative and deliver results with remarkable consistency. She quickly became the go-to person for handling complex modules and ensuring project milestones were met smoothly.",
+      "Shreya has a unique ability to bridge technical depth with clear communication — whether it's breaking down requirements for teammates or explaining technical concepts to non-technical stakeholders, she always ensures everyone is on the same page. Her professionalism and calm demeanor made collaboration effortless, even during high-pressure deliverables.",
+      "She also brought an inspiring level of ownership and curiosity to her work. Shreya was never satisfied with \"just getting things done\" — she constantly looked for better ways to optimize systems, improve workflows, and adopt new technologies.",
+      "Her leadership qualities, adaptability, and passion for learning will no doubt make her a valuable asset to any team she joins. Working with her was an enriching experience, and I look forward to seeing all the great things she'll accomplish in the future.",
+    ],
+  },
+  {
+    name: "Rajatabha Chakraborty",
+    title: "Reliance Foundation Scholar 2025-26 | MS in ECE, IIIT Hyderabad (Centre for VLSI and Embedded Systems Technology)",
+    date: "July 5, 2025",
+    relationship: "Worked with Shreya at Capgemini on the same team",
+    linkedin: "https://www.linkedin.com/in/rajatabha-chakraborty",
+    paragraphs: [
+      "I had the pleasure of working with Shreya at Capgemini, where we were part of the same development team. She consistently impressed me with her strong problem-solving skills, attention to detail, and ability to deliver high-quality code under tight deadlines.",
+      "What really stood out about Shreya was her eagerness to learn and her collaborative nature. She was always willing to help teammates, take ownership of complex tasks, and suggest innovative solutions to technical challenges. Her contributions were key to the success of several projects we worked on together.",
+      "Now, as she continues her academic journey at Arizona State University, I have no doubt she will bring the same drive, curiosity, and excellence to everything she does. Any team would be lucky to have her!",
+    ],
+  },
+];
+
 export const leadership = [
   {
     icon: "Users",
