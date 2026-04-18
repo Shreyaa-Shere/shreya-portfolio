@@ -1,19 +1,32 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Phone, Linkedin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
+const FORMSPREE_ID = 'YOUR_FORM_ID'; // replace with your ID from formspree.io
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm]     = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, []);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.href = `mailto:${personalInfo.email}?subject=Portfolio Inquiry from ${form.name}&body=${form.message}`;
+    setStatus('sending');
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -91,8 +104,23 @@ export default function Contact() {
                 onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.08)'}
               />
             </div>
-            <button type="submit" className="btn-primary" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', width: '100%' }}>
-              <Send size={16} /> Send Message
+            {status === 'success' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#4ade80', fontSize: '0.9rem', padding: '12px', background: 'rgba(74,222,128,0.08)', borderRadius: '10px', border: '1px solid rgba(74,222,128,0.2)' }}>
+                <CheckCircle size={16} /> Message sent! I&apos;ll get back to you soon.
+              </div>
+            )}
+            {status === 'error' && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f87171', fontSize: '0.9rem', padding: '12px', background: 'rgba(248,113,113,0.08)', borderRadius: '10px', border: '1px solid rgba(248,113,113,0.2)' }}>
+                <AlertCircle size={16} /> Something went wrong. Please try again or email directly.
+              </div>
+            )}
+            <button
+              type="submit"
+              disabled={status === 'sending' || status === 'success'}
+              className="btn-primary"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', width: '100%', opacity: status === 'sending' ? 0.7 : 1 }}
+            >
+              <Send size={16} /> {status === 'sending' ? 'Sending…' : 'Send Message'}
             </button>
           </form>
         </motion.div>
