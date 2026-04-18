@@ -116,7 +116,7 @@ export default function Recommendations() {
         <p className="section-subtitle">Recommendations from colleagues I've had the pleasure of working with</p>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px', alignItems: 'start' }}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px', alignItems: 'stretch' }}
         className="recommendations-grid"
       >
         {recommendations.map((rec, i) => (
