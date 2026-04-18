@@ -25,7 +25,7 @@ function ProjectCard({ proj, index }) {
         position: 'relative',
         borderRadius: '18px',
         overflow: 'hidden',
-        height: '360px',
+        height: '460px',
         cursor: 'pointer',
         border: `1px solid ${hovered ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.07)'}`,
         boxShadow: hovered
