@@ -182,3 +182,9 @@ body {
   .section-title { font-size: 1.6rem; }
   .btn-primary, .btn-outline { padding: 10px 20px; font-size: 0.875rem; }
 }
+
+@keyframes rec-border-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
