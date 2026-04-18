@@ -56,13 +56,13 @@ export default function App() {
       <Navbar activeSection={activeSection} onOpenPalette={openPalette} />
       <SideNav activeSection={activeSection} />
 
-      <div id="home"><Hero /></div>
-      <div id="about"><About /></div>
-      <div id="skills"><Skills /></div>
-      <div id="experience"><Experience /></div>
-      <div id="projects"><Projects /></div>
-      <div id="leadership"><Leadership /></div>
-      <div id="contact"><Contact /></div>
+      <div id="home" className="snap-section"><Hero /></div>
+      <div id="about" className="snap-section"><About /></div>
+      <div id="skills" className="snap-section"><Skills /></div>
+      <div id="experience" className="snap-section"><Experience /></div>
+      <div id="projects" className="snap-section"><Projects /></div>
+      <div id="leadership" className="snap-section"><Leadership /></div>
+      <div id="contact" className="snap-section"><Contact /></div>
       <Footer />
     </div>
   );
