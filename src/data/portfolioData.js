@@ -159,6 +159,7 @@ export const projects = [
     tags: ["FastAPI", "React", "TypeScript", "PostgreSQL", "Redis", "Celery", "Docker", "TanStack Query"],
     highlights: ["JWT auth + RBAC roles", "Full-text search with snippets", "Celery ingestion pipeline", "Redis caching + audit log"],
     github: "https://github.com/Shreyaa-Shere/ai-infra-research-dashboard",
+    liveUrl: "https://dashboard.shreyashere.dev/login",
   },
 ];
 
