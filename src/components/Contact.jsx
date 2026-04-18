@@ -38,8 +38,8 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         style={{ textAlign: 'center', marginBottom: '64px' }}
       >
-        <h1 className="section-title">Get In <span className="gradient-text">Touch</span></h1>
-        <p className="section-subtitle">Let&apos;s discuss how we can work together</p>
+        <h1 className="section-title">Let's Build Something <span className="gradient-text">Great.</span></h1>
+        <p className="section-subtitle">If something here lines up with what you're building or hiring for — I'd love to hear from you.</p>
       </motion.div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }} className="contact-grid">
@@ -52,7 +52,10 @@ export default function Contact() {
           className="glass-card"
           style={{ padding: '36px' }}
         >
-          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fafafa', marginBottom: '24px' }}>Send a Message</h2>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fafafa', marginBottom: '12px' }}>Send a Message</h2>
+          <p style={{ color: '#71717a', fontSize: '0.85rem', lineHeight: 1.7, marginBottom: '24px' }}>
+            Whether it's a full-time role, a collaboration, or just a hello — I read every message and usually reply within a day.
+          </p>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {['name', 'email'].map(field => (
               <div key={field}>
