@@ -21,7 +21,7 @@ export default function Footer() {
         margin: '0 auto',
       }}>
         <p style={{ color: '#52525b', fontSize: '0.8rem' }}>
-          &copy; 2026 {personalInfo.name}. All rights reserved.
+          Designed & built by {personalInfo.name}
         </p>
         <div style={{ display: 'flex', gap: '16px' }}>
           {[
