@@ -136,6 +136,7 @@ export const projects = [
     tags: ["AI", "OCR", "OpenAI", "Streamlit", "FinTech"],
     highlights: ["95% OCR accuracy", "Budget tracking", "Multi-format export"],
     github: "https://github.com/Shreyaa-Shere",
+    image: "/receipt-genie-cover.png",
   },
   {
     title: "LegalEase",
@@ -144,6 +145,7 @@ export const projects = [
     tags: ["AI", "Django", "React", "OpenAI", "PostgreSQL", "Celery", "Redis", "JWT Auth"],
     highlights: ["AI-powered risk analysis", "Automated clause detection", "Real-time processing", "Secure authentication"],
     github: "https://github.com/Shreyaa-Shere",
+    image: "/legalease-cover.png",
   },
   {
     title: "AI Infra Research Dashboard",

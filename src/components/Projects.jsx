@@ -36,17 +36,36 @@ function ProjectCard({ proj, index }) {
     >
       {/* Background layers */}
       <div style={{ position: 'absolute', inset: 0, background: '#0d0d18', zIndex: 0 }} />
-      <div style={{ position: 'absolute', inset: 0, background: grad.bg, zIndex: 1 }} />
-
-      {/* Watermark */}
-      <div style={{
-        position: 'absolute', bottom: '100px', left: '16px', right: '16px', zIndex: 2,
-        fontSize: '2rem', fontWeight: 900, lineHeight: 1.15,
-        color: 'rgba(255,255,255,0.08)', letterSpacing: '-0.02em',
-        userSelect: 'none', pointerEvents: 'none',
-        transition: 'opacity 0.3s ease', opacity: hovered ? 0 : 1,
-        wordBreak: 'break-word',
-      }}>{proj.title}</div>
+      {proj.image ? (
+        <>
+          <img
+            src={proj.image}
+            alt={proj.title}
+            style={{
+              position: 'absolute', inset: 0, width: '100%', height: '100%',
+              objectFit: 'cover', objectPosition: 'center top',
+              zIndex: 1, opacity: hovered ? 0.15 : 0.72,
+              transition: 'opacity 0.38s ease',
+            }}
+          />
+          <div style={{
+            position: 'absolute', inset: 0, zIndex: 2,
+            background: 'linear-gradient(to top, rgba(9,9,15,1) 0%, rgba(9,9,15,0.55) 55%, rgba(9,9,15,0.1) 100%)',
+          }} />
+        </>
+      ) : (
+        <>
+          <div style={{ position: 'absolute', inset: 0, background: grad.bg, zIndex: 1 }} />
+          <div style={{
+            position: 'absolute', bottom: '100px', left: '16px', right: '16px', zIndex: 2,
+            fontSize: '2rem', fontWeight: 900, lineHeight: 1.15,
+            color: 'rgba(255,255,255,0.08)', letterSpacing: '-0.02em',
+            userSelect: 'none', pointerEvents: 'none',
+            transition: 'opacity 0.3s ease', opacity: hovered ? 0 : 1,
+            wordBreak: 'break-word',
+          }}>{proj.title}</div>
+        </>
+      )}
 
       {/* Resting info */}
       <div style={{
