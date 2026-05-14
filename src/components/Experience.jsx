@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
 import { experience } from '../data/portfolioData';
 
 export default function Experience() {
@@ -63,34 +63,9 @@ export default function Experience() {
               <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', margin: '16px 0' }} />
 
               {/* Summary */}
-              <p style={{ color: '#71717a', fontSize: '0.875rem', lineHeight: 1.65, marginBottom: '18px', fontStyle: 'italic' }}>
+              <p style={{ color: '#71717a', fontSize: '0.875rem', lineHeight: 1.65, fontStyle: 'italic' }}>
                 {job.summary}
               </p>
-
-              {/* 3 key bullets */}
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px', listStyle: 'none', padding: 0, marginBottom: '20px' }}>
-                {job.bullets.map((bullet, j) => (
-                  <li key={j} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', color: '#a1a1aa', fontSize: '0.875rem', lineHeight: 1.6 }}>
-                    <ArrowRight size={14} color="#f472b6" style={{ marginTop: '3px', flexShrink: 0 }} />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Tech tags */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '7px' }}>
-                {job.techTags.map((tag, j) => (
-                  <span key={j} style={{
-                    background: 'rgba(192,132,252,0.08)',
-                    border: '1px solid rgba(192,132,252,0.2)',
-                    color: '#c084fc',
-                    padding: '3px 11px',
-                    borderRadius: '50px',
-                    fontSize: '0.75rem',
-                    fontWeight: 500,
-                  }}>{tag}</span>
-                ))}
-              </div>
 
             </div>
           </motion.div>
