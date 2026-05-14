@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Github, ArrowUpRight, ExternalLink, Play, Map } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 
 const CARD_GRADIENTS = [
@@ -151,7 +151,7 @@ function ProjectCard({ proj, index }) {
           ))}
         </ul>
 
-        <div style={{ display: 'flex', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '7px', marginTop: 'auto', flexWrap: 'wrap' }}>
           <a href={proj.github} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
             style={{
               display: 'flex', alignItems: 'center', gap: '5px',
@@ -164,6 +164,34 @@ function ProjectCard({ proj, index }) {
           >
             <Github size={12} /> GitHub <ArrowUpRight size={11} />
           </a>
+          {proj.demoUrl && (
+            <a href={proj.demoUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+              style={{
+                display: 'flex', alignItems: 'center', gap: '5px',
+                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: '50px', padding: '6px 13px', color: '#fafafa',
+                textDecoration: 'none', fontSize: '0.75rem', fontWeight: 600, transition: 'all 0.2s ease',
+              }}
+              onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
+              onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
+            >
+              <Play size={12} /> Demo Video <ArrowUpRight size={11} />
+            </a>
+          )}
+          {proj.mindMapUrl && (
+            <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+              style={{
+                display: 'flex', alignItems: 'center', gap: '5px',
+                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: '50px', padding: '6px 13px', color: '#fafafa',
+                textDecoration: 'none', fontSize: '0.75rem', fontWeight: 600, transition: 'all 0.2s ease',
+              }}
+              onMouseOver={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.15)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.4)'; e.currentTarget.style.color = '#c084fc'; }}
+              onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
+            >
+              <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
+            </a>
+          )}
           {proj.liveUrl && (
             <a href={proj.liveUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
               style={{
