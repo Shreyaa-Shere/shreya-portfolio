@@ -155,6 +155,7 @@ export const projects = [
     highlights: ["JWT auth + RBAC roles", "Full-text search with snippets", "Celery ingestion pipeline", "Redis caching + audit log"],
     github: "https://github.com/Shreyaa-Shere/ai-infra-research-dashboard",
     liveUrl: "https://dashboard.shreyashere.dev/login",
+    image: "/ai-infra-cover.png",
   },
 ];
 
