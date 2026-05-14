@@ -151,8 +151,8 @@ function ProjectCard({ proj, index }) {
           ))}
         </ul>
 
-        {/* Buttons: 2-column grid — row 1: GitHub + Demo Video, row 2: Mind Map + Live Demo */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '7px', marginTop: 'auto' }}>
+          {/* GitHub — always col 1, row 1 */}
           <a href={proj.github} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
             style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
@@ -166,51 +166,84 @@ function ProjectCard({ proj, index }) {
             <Github size={12} /> GitHub <ArrowUpRight size={11} />
           </a>
 
-          {proj.demoUrl && (
-            <a href={proj.demoUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
-                textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
-              }}
-              onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
-              onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
-            >
-              <Play size={12} /> Demo Video <ArrowUpRight size={11} />
-            </a>
-          )}
-
-          {proj.mindMapUrl && (
-            <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                gridColumn: proj.liveUrl ? 'auto' : '1 / -1',
-                background: 'rgba(192,132,252,0.08)', border: '1px solid rgba(192,132,252,0.25)',
-                borderRadius: '50px', padding: '7px 13px', color: '#c084fc',
-                textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
-              }}
-              onMouseOver={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.2)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.5)'; e.currentTarget.style.color = '#e9d5ff'; }}
-              onMouseOut={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.08)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.25)'; e.currentTarget.style.color = '#c084fc'; }}
-            >
-              <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
-            </a>
-          )}
-
-          {proj.liveUrl && (
-            <a href={proj.liveUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                background: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(192,132,252,0.15))',
-                border: '1px solid rgba(244,114,182,0.35)',
-                borderRadius: '50px', padding: '7px 13px', color: '#f9a8d4',
-                textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
-              }}
-              onMouseOver={e => { e.currentTarget.style.background = 'linear-gradient(135deg, rgba(244,114,182,0.35), rgba(192,132,252,0.35))'; e.currentTarget.style.color = '#fafafa'; }}
-              onMouseOut={e => { e.currentTarget.style.background = 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(192,132,252,0.15))'; e.currentTarget.style.color = '#f9a8d4'; }}
-            >
-              <ExternalLink size={12} /> Live Demo <ArrowUpRight size={11} />
-            </a>
+          {proj.liveUrl ? (
+            // 4-button layout (AI Infra): GitHub | Demo Video / Mind Map | Live Demo
+            <>
+              {proj.demoUrl && (
+                <a href={proj.demoUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
+                    textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
+                >
+                  <Play size={12} /> Demo Video <ArrowUpRight size={11} />
+                </a>
+              )}
+              {proj.mindMapUrl && (
+                <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                    background: 'rgba(192,132,252,0.08)', border: '1px solid rgba(192,132,252,0.25)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#c084fc',
+                    textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.2)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.5)'; e.currentTarget.style.color = '#e9d5ff'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.08)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.25)'; e.currentTarget.style.color = '#c084fc'; }}
+                >
+                  <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
+                </a>
+              )}
+              <a href={proj.liveUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                  background: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(192,132,252,0.15))',
+                  border: '1px solid rgba(244,114,182,0.35)',
+                  borderRadius: '50px', padding: '7px 13px', color: '#f9a8d4',
+                  textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
+                }}
+                onMouseOver={e => { e.currentTarget.style.background = 'linear-gradient(135deg, rgba(244,114,182,0.35), rgba(192,132,252,0.35))'; e.currentTarget.style.color = '#fafafa'; }}
+                onMouseOut={e => { e.currentTarget.style.background = 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(192,132,252,0.15))'; e.currentTarget.style.color = '#f9a8d4'; }}
+              >
+                <ExternalLink size={12} /> Live Demo <ArrowUpRight size={11} />
+              </a>
+            </>
+          ) : (
+            // 3-button layout (Receipt Genie, LegalEase): GitHub | Mind Map / Demo Video (full width)
+            <>
+              {proj.mindMapUrl && (
+                <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                    background: 'rgba(192,132,252,0.08)', border: '1px solid rgba(192,132,252,0.25)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#c084fc',
+                    textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.2)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.5)'; e.currentTarget.style.color = '#e9d5ff'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.08)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.25)'; e.currentTarget.style.color = '#c084fc'; }}
+                >
+                  <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
+                </a>
+              )}
+              {proj.demoUrl && (
+                <a href={proj.demoUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                    gridColumn: '1 / -1',
+                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
+                    textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
+                >
+                  <Play size={12} /> Demo Video <ArrowUpRight size={11} />
+                </a>
+              )}
+            </>
           )}
         </div>
       </div>
