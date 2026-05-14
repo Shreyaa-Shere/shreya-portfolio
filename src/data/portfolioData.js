@@ -136,7 +136,7 @@ export const projects = [
     tags: ["AI", "OCR", "OpenAI", "Streamlit", "FinTech"],
     highlights: ["95% OCR accuracy", "Budget tracking", "Multi-format export"],
     github: "https://github.com/Shreyaa-Shere/Receipt_Genie",
-    demoUrl: "#",
+    demoUrl: "https://youtu.be/wfGUgp56TVM?si=AQUrKiung3FzLO16",
     mindMapUrl: "/receipt-genie-mindmap.png",
     image: "/receipt-genie-cover.png",
   },
