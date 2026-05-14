@@ -135,7 +135,7 @@ export const projects = [
     description: "Streamlit-based receipt management system with OCR and OpenAI API integration. Features 95% OCR accuracy, smart budget alerts, and comprehensive PDF/Excel export capabilities.",
     tags: ["AI", "OCR", "OpenAI", "Streamlit", "FinTech"],
     highlights: ["95% OCR accuracy", "Budget tracking", "Multi-format export"],
-    github: "https://github.com/Shreyaa-Shere",
+    github: "https://github.com/Shreyaa-Shere/Receipt_Genie",
     image: "/receipt-genie-cover.png",
   },
   {
@@ -144,7 +144,7 @@ export const projects = [
     description: "Django REST Framework and React-based contract analysis platform with OpenAI GPT integration. Features automated text extraction from PDF/DOCX files, intelligent clause detection, AI-powered risk assessment, and asynchronous processing with Celery for real-time analysis.",
     tags: ["AI", "Django", "React", "OpenAI", "PostgreSQL", "Celery", "Redis", "JWT Auth"],
     highlights: ["AI-powered risk analysis", "Automated clause detection", "Real-time processing", "Secure authentication"],
-    github: "https://github.com/Shreyaa-Shere",
+    github: "https://github.com/Shreyaa-Shere/legalease-ai-contract-analyzer",
     image: "/legalease-cover.png",
   },
   {
