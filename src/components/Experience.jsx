@@ -59,13 +59,6 @@ export default function Experience() {
                 </div>
               </div>
 
-              {/* Divider */}
-              <div style={{ height: '1px', background: 'rgba(255,255,255,0.05)', margin: '16px 0' }} />
-
-              {/* Summary */}
-              <p style={{ color: '#71717a', fontSize: '0.875rem', lineHeight: 1.65, fontStyle: 'italic' }}>
-                {job.summary}
-              </p>
 
             </div>
           </motion.div>

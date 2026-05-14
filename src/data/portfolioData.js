@@ -89,9 +89,9 @@ export const skills = [
 export const experience = [
   {
     title: "Senior Software Engineer",
-    company: "Capgemini Technology Services India Ltd.",
+    company: "Capgemini",
     period: "Jun 2023 – Jun 2024",
-    location: "India",
+    location: "Bangalore",
     summary: "Led distributed financial data platforms at scale — owning microservices architecture, search infrastructure, and LLM-driven automation across global banking systems.",
     bullets: [
       "Designed and scaled 100+ RESTful and GraphQL APIs secured with OAuth2, handling 300,000+ API calls daily across internal banking systems and external providers.",
@@ -102,9 +102,9 @@ export const experience = [
   },
   {
     title: "Software Engineer",
-    company: "Capgemini Technology Services India Ltd.",
+    company: "Capgemini",
     period: "Mar 2022 – Jun 2023",
-    location: "India",
+    location: "Bangalore",
     summary: "Built scalable healthcare data systems and AI-driven workflows — delivering full-stack features across clinician-facing applications and modernizing frontend infrastructure.",
     bullets: [
       "Built and owned secure backend APIs using Node.js and Express for healthcare data systems, handling 10,000+ concurrent requests with high availability and stability.",
@@ -117,7 +117,7 @@ export const experience = [
     title: "Software Engineer Intern",
     company: "Zensar Technologies",
     period: "Aug 2020 – Mar 2022",
-    location: "India",
+    location: "Bangalore",
     summary: "Optimized financial transaction backends and modernized legacy frontend systems — improving performance and reliability for platforms serving 5,000+ users.",
     bullets: [
       "Enhanced scalability for a financial reporting platform handling 200,000+ daily transactions through caching strategies, query optimization, and robust error handling.",
