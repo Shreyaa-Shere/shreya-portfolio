@@ -12,7 +12,7 @@ const CARD_GRADIENTS = [
 function TagList({ tags }) {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
-      {tags.slice(0, 4).map((tag, j) => (
+      {tags.slice(0, 5).map((tag, j) => (
         <span key={j} style={{
           background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
           color: '#d4d4d8', padding: '2px 9px', borderRadius: '50px', fontSize: '0.68rem',
