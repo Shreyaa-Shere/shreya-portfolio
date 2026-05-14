@@ -9,6 +9,19 @@ const CARD_GRADIENTS = [
   { bg: 'linear-gradient(135deg, rgba(20,184,166,0.50) 0%, rgba(59,130,246,0.45) 100%)',   glow: 'rgba(20,184,166,0.22)'  },
 ];
 
+function TagList({ tags }) {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+      {tags.slice(0, 4).map((tag, j) => (
+        <span key={j} style={{
+          background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+          color: '#d4d4d8', padding: '2px 9px', borderRadius: '50px', fontSize: '0.68rem',
+        }}>{tag}</span>
+      ))}
+    </div>
+  );
+}
+
 function ProjectCard({ proj, index }) {
   const [hovered, setHovered] = useState(false);
   const grad = CARD_GRADIENTS[index % CARD_GRADIENTS.length];
@@ -27,6 +40,8 @@ function ProjectCard({ proj, index }) {
         overflow: 'hidden',
         height: '460px',
         cursor: 'pointer',
+        display: 'flex',
+        flexDirection: 'column',
         border: `1px solid ${hovered ? 'rgba(255,255,255,0.14)' : 'rgba(255,255,255,0.07)'}`,
         boxShadow: hovered
           ? `0 0 40px ${grad.glow}, 0 8px 32px rgba(0,0,0,0.4)`
@@ -34,28 +49,61 @@ function ProjectCard({ proj, index }) {
         transition: 'box-shadow 0.35s ease, border-color 0.35s ease',
       }}
     >
-      {/* Background layers */}
-      <div style={{ position: 'absolute', inset: 0, background: '#0d0d18', zIndex: 0 }} />
       {proj.image ? (
         <>
-          <img
-            src={proj.image}
-            alt={proj.title}
-            style={{
-              position: 'absolute', inset: 0, width: '100%', height: '100%',
-              objectFit: 'cover', objectPosition: 'center top',
-              zIndex: 1, opacity: hovered ? 0.15 : 0.72,
-              transition: 'opacity 0.38s ease',
-            }}
-          />
+          {/* Image zone */}
           <div style={{
-            position: 'absolute', inset: 0, zIndex: 2,
-            background: 'linear-gradient(to top, rgba(9,9,15,1) 0%, rgba(9,9,15,0.55) 55%, rgba(9,9,15,0.1) 100%)',
-          }} />
+            flex: '0 0 300px',
+            position: 'relative',
+            background: '#0a0a14',
+            overflow: 'hidden',
+          }}>
+            <img
+              src={proj.image}
+              alt={proj.title}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center',
+                padding: '18px',
+                filter: 'brightness(0.78) saturate(0.9)',
+                transform: hovered ? 'scale(1.03)' : 'scale(1)',
+                transition: 'transform 0.38s ease',
+              }}
+            />
+            {/* bottom fade into info zone */}
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0, height: '48px',
+              background: 'linear-gradient(to bottom, transparent, #0d0d18)',
+              pointerEvents: 'none',
+            }} />
+          </div>
+
+          {/* Info zone */}
+          <div style={{
+            flex: 1,
+            background: '#0d0d18',
+            padding: '14px 20px 16px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: '8px',
+          }}>
+            <div>
+              <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '3px' }}>{proj.title}</h3>
+              <p style={{ color: '#e879f9', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{proj.subtitle}</p>
+            </div>
+            <TagList tags={proj.tags} />
+          </div>
         </>
       ) : (
         <>
+          {/* Gradient background */}
+          <div style={{ position: 'absolute', inset: 0, background: '#0d0d18', zIndex: 0 }} />
           <div style={{ position: 'absolute', inset: 0, background: grad.bg, zIndex: 1 }} />
+
+          {/* Watermark */}
           <div style={{
             position: 'absolute', bottom: '100px', left: '16px', right: '16px', zIndex: 2,
             fontSize: '2rem', fontWeight: 900, lineHeight: 1.15,
@@ -64,37 +112,29 @@ function ProjectCard({ proj, index }) {
             transition: 'opacity 0.3s ease', opacity: hovered ? 0 : 1,
             wordBreak: 'break-word',
           }}>{proj.title}</div>
+
+          {/* Resting info */}
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 3,
+            padding: '16px 20px',
+            background: 'linear-gradient(to top, rgba(9,9,15,0.97) 0%, rgba(9,9,15,0.85) 70%, transparent 100%)',
+            transition: 'opacity 0.25s ease', opacity: hovered ? 0 : 1,
+          }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '3px' }}>{proj.title}</h3>
+            <p style={{ color: '#e879f9', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '10px' }}>{proj.subtitle}</p>
+            <TagList tags={proj.tags} />
+          </div>
         </>
       )}
 
-      {/* Resting info */}
+      {/* Hover overlay — covers all cards */}
       <div style={{
-        position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 3,
-        padding: '16px 20px',
-        background: 'linear-gradient(to top, rgba(9,9,15,0.97) 0%, rgba(9,9,15,0.85) 70%, transparent 100%)',
-        transition: 'opacity 0.25s ease', opacity: hovered ? 0 : 1,
-      }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '3px' }}>{proj.title}</h3>
-        <p style={{ color: '#e879f9', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '10px' }}>{proj.subtitle}</p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
-          {proj.tags.slice(0, 4).map((tag, j) => (
-            <span key={j} style={{
-              background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
-              color: '#d4d4d8', padding: '2px 9px', borderRadius: '50px', fontSize: '0.68rem',
-            }}>{tag}</span>
-          ))}
-        </div>
-      </div>
-
-      {/* Hover overlay */}
-      <div style={{
-        position: 'absolute', inset: 0, zIndex: 4,
+        position: 'absolute', inset: 0, zIndex: 10,
         background: 'rgba(9,9,15,0.93)', backdropFilter: 'blur(12px)',
         padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px',
         transform: hovered ? 'translateY(0)' : 'translateY(100%)',
         transition: 'transform 0.38s cubic-bezier(0.4, 0, 0.2, 1)',
       }}>
-        {/* Header */}
         <div>
           <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fafafa', marginBottom: '2px' }}>{proj.title}</h3>
           <p style={{ color: '#e879f9', fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{proj.subtitle}</p>
@@ -111,7 +151,6 @@ function ProjectCard({ proj, index }) {
           ))}
         </ul>
 
-        {/* Buttons */}
         <div style={{ display: 'flex', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
           <a href={proj.github} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
             style={{
