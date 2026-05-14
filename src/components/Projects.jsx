@@ -167,22 +167,8 @@ function ProjectCard({ proj, index }) {
           </a>
 
           {proj.liveUrl ? (
-            // 4-button layout (AI Infra): GitHub | Demo Video / Mind Map | Live Demo
+            // 4-button layout (AI Infra): GitHub | Mind Map / Demo Video (full) / Live Demo (full)
             <>
-              {proj.demoUrl && (
-                <a href={proj.demoUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
-                  style={{
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
-                    borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
-                    textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
-                  }}
-                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
-                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
-                >
-                  <Play size={12} /> Demo Video <ArrowUpRight size={11} />
-                </a>
-              )}
               {proj.mindMapUrl && (
                 <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
                   style={{
@@ -197,9 +183,25 @@ function ProjectCard({ proj, index }) {
                   <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
                 </a>
               )}
+              {proj.demoUrl && (
+                <a href={proj.demoUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                    gridColumn: '1 / -1',
+                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
+                    textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
+                >
+                  <Play size={12} /> Demo Video <ArrowUpRight size={11} />
+                </a>
+              )}
               <a href={proj.liveUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
+                  gridColumn: '1 / -1',
                   background: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(192,132,252,0.15))',
                   border: '1px solid rgba(244,114,182,0.35)',
                   borderRadius: '50px', padding: '7px 13px', color: '#f9a8d4',
