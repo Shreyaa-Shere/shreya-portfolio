@@ -38,7 +38,7 @@ function ProjectCard({ proj, index }) {
         position: 'relative',
         borderRadius: '18px',
         overflow: 'hidden',
-        height: '460px',
+        height: '580px',
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
@@ -53,7 +53,7 @@ function ProjectCard({ proj, index }) {
         <>
           {/* Image zone */}
           <div style={{
-            flex: '0 0 300px',
+            flex: '0 0 400px',
             position: 'relative',
             background: '#0a0a14',
             overflow: 'hidden',
@@ -189,7 +189,7 @@ export default function Projects() {
   const cols = projects.length === 3 ? 3 : 2;
 
   return (
-    <section className="page-wrap" style={{ maxWidth: '1300px' }}>
+    <section className="page-wrap" style={{ maxWidth: '1500px' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
