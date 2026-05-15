@@ -134,7 +134,7 @@ export const projects = [
     subtitle: "AI Receipt Dashboard & Budgeting App",
     description: "A full-stack AI-powered expense management app that scans paper and digital receipts using GPT-4o Vision, automatically extracts line items, dates, and vendor details with 95% accuracy, and organizes spending into interactive dashboards. Features real-time budget guardrails with color-coded alerts, SHA-256 duplicate detection, and one-click PDF, Excel, and CSV export for professional financial reporting.",
     tags: ["AI", "OCR", "OpenAI", "Streamlit", "FinTech"],
-    highlights: ["95% OCR accuracy", "Budget tracking", "Multi-format export"],
+    highlights: ["GPT-4o Vision extracts store, items & prices with 95% accuracy", "SHA-256 duplicate detection prevents redundant API calls", "Real-time budget alerts with color-coded guardrails", "One-click PDF, Excel & CSV export"],
     github: "https://github.com/Shreyaa-Shere/Receipt_Genie",
     demoUrl: "https://youtu.be/wfGUgp56TVM?si=AQUrKiung3FzLO16",
     mindMapUrl: "/receipt-genie-mindmap.png",
