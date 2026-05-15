@@ -88,6 +88,15 @@ export const skills = [
 
 export const experience = [
   {
+    title: "Frontend Engineer",
+    company: "Aligned Rewards",
+    period: "Jan 2026 – May 2026",
+    location: "Remote (US)",
+    summary: "",
+    bullets: [],
+    techTags: ["React.js", "REST APIs", "Agile/Scrum"],
+  },
+  {
     title: "Senior Software Engineer",
     company: "Capgemini",
     period: "Jun 2023 – Jun 2024",
@@ -112,19 +121,6 @@ export const experience = [
       "Reduced infrastructure costs by 20% through database indexing, caching, and query optimization while migrating 5+ applications to Tailwind CSS.",
     ],
     techTags: ["Angular", "React.js", "TypeScript", "Node.js", "Docker", "Terraform", "OpenAI", "Tailwind CSS"],
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "Zensar Technologies",
-    period: "Aug 2020 – Mar 2022",
-    location: "Bangalore",
-    summary: "Optimized financial transaction backends and modernized legacy frontend systems — improving performance and reliability for platforms serving 5,000+ users.",
-    bullets: [
-      "Enhanced scalability for a financial reporting platform handling 200,000+ daily transactions through caching strategies, query optimization, and robust error handling.",
-      "Migrated legacy frontend from AngularJS to Angular (6+), improving responsiveness and usability for 5,000+ users across reporting and portfolio applications.",
-      "Automated log management and audit workflows with Python and Bash scripting, saving 60+ hours of manual effort per month.",
-    ],
-    techTags: ["Node.js", "MongoDB", "Angular", "Apache Kafka", "Python", "Postman"],
   },
 ];
 
