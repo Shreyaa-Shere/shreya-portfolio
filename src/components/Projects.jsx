@@ -173,14 +173,14 @@ function ProjectCard({ proj, index }) {
                 <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
                   style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                    background: 'rgba(192,132,252,0.08)', border: '1px solid rgba(192,132,252,0.25)',
-                    borderRadius: '50px', padding: '7px 13px', color: '#c084fc',
+                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
                     textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
                   }}
-                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.2)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.5)'; e.currentTarget.style.color = '#e9d5ff'; }}
-                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.08)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.25)'; e.currentTarget.style.color = '#c084fc'; }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
                 >
-                  <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
+                  <Map size={12} /> Mind Map <ArrowUpRight size={11} />
                 </a>
               )}
               {proj.demoUrl && (
@@ -220,14 +220,14 @@ function ProjectCard({ proj, index }) {
                 <a href={proj.mindMapUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()}
                   style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px',
-                    background: 'rgba(192,132,252,0.08)', border: '1px solid rgba(192,132,252,0.25)',
-                    borderRadius: '50px', padding: '7px 13px', color: '#c084fc',
+                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: '50px', padding: '7px 13px', color: '#fafafa',
                     textDecoration: 'none', fontSize: '0.73rem', fontWeight: 600, transition: 'all 0.2s ease',
                   }}
-                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.2)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.5)'; e.currentTarget.style.color = '#e9d5ff'; }}
-                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(192,132,252,0.08)'; e.currentTarget.style.borderColor = 'rgba(192,132,252,0.25)'; e.currentTarget.style.color = '#c084fc'; }}
+                  onMouseOver={e => { e.currentTarget.style.background = 'rgba(244,114,182,0.15)'; e.currentTarget.style.borderColor = 'rgba(244,114,182,0.4)'; e.currentTarget.style.color = '#f472b6'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = '#fafafa'; }}
                 >
-                  <Map size={12} /> Project Mind Map <ArrowUpRight size={11} />
+                  <Map size={12} /> Mind Map <ArrowUpRight size={11} />
                 </a>
               )}
               {proj.demoUrl && (
