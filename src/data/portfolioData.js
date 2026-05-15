@@ -143,9 +143,9 @@ export const projects = [
   {
     title: "LegalEase",
     subtitle: "AI-Powered Contract Analyzer",
-    description: "Django REST Framework and React-based contract analysis platform with OpenAI GPT integration. Features automated text extraction from PDF/DOCX files, intelligent clause detection, AI-powered risk assessment, and asynchronous processing with Celery for real-time analysis.",
+    description: "A decoupled full-stack SPA built with React 19 + Vite on the frontend and Django REST Framework on the backend, backed by PostgreSQL for structured contract storage. A Redis-powered Celery async queue offloads heavy document parsing and AI API calls to background workers, keeping the UI fully responsive. GitHub Actions runs automated pytest suites against a live PostgreSQL instance on every push, ensuring backend reliability.",
     tags: ["AI", "Django", "React", "OpenAI", "PostgreSQL", "Celery", "Redis", "JWT Auth"],
-    highlights: ["AI-powered risk analysis", "Automated clause detection", "Real-time processing", "Secure authentication"],
+    highlights: ["OpenAI GPT-4o-mini generates executive summaries & risk assessments", "Custom regex engine detects legal clauses with deterministic accuracy", "Real-time UI polling reflects live background processing status", "JWT authentication with per-user data isolation"],
     github: "https://github.com/Shreyaa-Shere/legalease-ai-contract-analyzer",
     demoUrl: "#",
     mindMapUrl: "/legalease-mindmap.png",
