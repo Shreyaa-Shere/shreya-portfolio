@@ -132,7 +132,7 @@ export const projects = [
   {
     title: "Receipt Genie",
     subtitle: "AI Receipt Dashboard & Budgeting App",
-    description: "A full-stack AI-powered expense management app that scans paper and digital receipts using GPT-4o Vision, automatically extracts line items, dates, and vendor details with 95% accuracy, and organizes spending into interactive dashboards. Features real-time budget guardrails with color-coded alerts, SHA-256 duplicate detection, and one-click PDF, Excel, and CSV export for professional financial reporting.",
+    description: "Built with Python and Streamlit, Receipt Genie persists all receipt data in a SQLite database via SQLAlchemy ORM, with secure bcrypt authentication and drag-and-drop image uploads. Plotly-powered dashboards surface monthly spending trends, top vendors, and category breakdowns in real time.",
     tags: ["AI", "OCR", "OpenAI", "Streamlit", "FinTech"],
     highlights: ["GPT-4o Vision extracts store, items & prices with 95% accuracy", "SHA-256 duplicate detection prevents redundant API calls", "Real-time budget alerts with color-coded guardrails", "One-click PDF, Excel & CSV export"],
     github: "https://github.com/Shreyaa-Shere/Receipt_Genie",
