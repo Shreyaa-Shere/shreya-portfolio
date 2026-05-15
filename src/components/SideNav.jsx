@@ -43,7 +43,6 @@ export default function SideNav({ activeSection }) {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '10px',
                 cursor: 'pointer',
                 padding: '4px 0',
                 position: 'relative',
@@ -54,7 +53,7 @@ export default function SideNav({ activeSection }) {
                 document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' })
               }
             >
-              {/* Label — slides in from the right, hidden unless active/hovered */}
+              {/* Label — slides in from the right, hidden unless active/hovered, absolutely positioned so it doesn't shift the dot */}
               <motion.span
                 animate={{
                   opacity: isActive || isHovered ? 1 : 0,
@@ -62,6 +61,8 @@ export default function SideNav({ activeSection }) {
                 }}
                 transition={{ duration: 0.18, ease: 'easeOut' }}
                 style={{
+                  position: 'absolute',
+                  right: '17px',
                   fontSize: '0.68rem',
                   fontWeight: isActive ? 600 : 400,
                   color: isActive ? '#f472b6' : '#a1a1aa',
