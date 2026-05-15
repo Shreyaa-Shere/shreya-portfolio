@@ -8,9 +8,9 @@ export const personalInfo = {
   github: "github.com/Shreyaa-Shere",
   linkedinUrl: "https://linkedin.com/in/shreya-shere",
   githubUrl: "https://github.com/Shreyaa-Shere",
-  bio1: "Senior Software Engineer with 4.5+ years of experience designing and scaling distributed systems, real-time data platforms, and AI-driven applications across finance and healthcare domains.",
+  bio1: "Senior Software Engineer with 3+ years of experience designing and scaling distributed systems, real-time data platforms, and AI-driven applications across finance and healthcare domains.",
   bio2: "Expertise in high-throughput microservices and event-driven architectures using Java, Spring Boot, Kafka, Kubernetes, and AWS — with hands-on experience integrating LLM-based solutions and RAG pipelines.",
-  bioLong: "I'm a Senior Software Engineer with 4.5+ years of experience designing and scaling distributed systems, real-time data platforms, and AI-driven applications across finance and healthcare domains. I specialize in building high-throughput microservices and event-driven architectures using Java, Spring Boot, Kafka, Kubernetes, and AWS.",
+  bioLong: "I'm a Senior Software Engineer with 3+ years of experience designing and scaling distributed systems, real-time data platforms, and AI-driven applications across finance and healthcare domains. I specialize in building high-throughput microservices and event-driven architectures using Java, Spring Boot, Kafka, Kubernetes, and AWS.",
   bioLong2: "I'm currently pursuing my Master's in Software Engineering at Arizona State University (GPA: 3.96). I'm actively seeking full-time SWE roles where I can own end-to-end systems from architecture and development to deployment, with a focus on scalability, performance, and reliability.",
 };
 
@@ -219,7 +219,7 @@ export const values = [
 ];
 
 export const stats = [
-  { value: "4.5+", label: "Years Experience" },
+  { value: "3+", label: "Years Experience" },
   { value: "3.96", label: "GPA at ASU" },
   { value: "20%", label: "Reduction in Production Issues" },
   { value: "50%", label: "Workflow Reduction" },
