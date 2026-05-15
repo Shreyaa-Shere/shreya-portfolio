@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 import { experience } from '../data/portfolioData';
 
 export default function Experience() {
@@ -44,7 +44,7 @@ export default function Experience() {
             <div className="glass-card" style={{ padding: '28px 32px' }}>
 
               {/* Header */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', marginBottom: '4px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
                 <div>
                   <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#fafafa', marginBottom: '3px' }}>{job.title}</h3>
                   <div style={{ color: '#e879f9', fontWeight: 600, fontSize: '0.875rem' }}>{job.company}</div>
@@ -59,6 +59,17 @@ export default function Experience() {
                 </div>
               </div>
 
+              {/* Bullets */}
+              {job.bullets?.length > 0 && (
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px', listStyle: 'none', padding: 0, margin: 0 }}>
+                  {job.bullets.map((bullet, j) => (
+                    <li key={j} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', color: '#a1a1aa', fontSize: '0.875rem', lineHeight: 1.6 }}>
+                      <ArrowRight size={14} color="#f472b6" style={{ marginTop: '3px', flexShrink: 0 }} />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
             </div>
           </motion.div>
