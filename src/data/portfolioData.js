@@ -174,6 +174,18 @@ export const recommendations = [
     ],
   },
   {
+    name: "Rishi Patidar",
+    title: "Project Manager | FinTech & Regulatory Programs | PMP®, CSM®, CSPO® | Agile Delivery | Data Driven Execution | Risk, Governance & Stakeholder Leadership",
+    date: "May 15, 2026",
+    relationship: "Rishi was senior to Shreya but didn't manage Shreya directly",
+    paragraphs: [
+      "I had the opportunity to collaborate with Shreya during our time at Capgemini, where although we belonged to different technical teams, we frequently worked together while supporting the same business objectives. What impressed me most about Shreya was her ability to quickly understand cross-functional requirements and coordinate effectively between teams to keep work moving smoothly.",
+      "Shreya consistently approached challenges with a solution-oriented mindset. Whenever discussions involved dependencies across teams or changing priorities, she handled them with maturity, clarity, and a strong sense of accountability. She was someone people could rely on to follow through on commitments and maintain a positive, professional attitude even during demanding phases of delivery.",
+      "Beyond her technical capabilities, Shreya stood out for her interpersonal skills and collaborative approach. She built strong working relationships with people across teams and was always approachable, supportive, and willing to contribute wherever needed. Her ability to balance technical execution with teamwork made her a valuable contributor in every interaction we had.",
+      "It was great reconnecting with Shreya later at Arizona State University and seeing the same dedication and drive reflected in her academic journey as well. She has a strong growth mindset, adapts quickly to new environments, and consistently pushes herself to learn and improve. I am confident she will continue to achieve great success in her career, and I highly recommend her to any team or organization looking for someone dependable, collaborative, and motivated.",
+    ],
+  },
+  {
     name: "Rajatabha Chakraborty",
     title: "Reliance Foundation Scholar 2025-26 | MS in ECE, IIIT Hyderabad (Centre for VLSI and Embedded Systems Technology)",
     date: "July 5, 2025",
