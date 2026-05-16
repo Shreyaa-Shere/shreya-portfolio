@@ -24,17 +24,14 @@ function RecCard({ rec, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.18 }}
-      style={{ height: '100%' }}
     >
     <motion.div
       animate={{ y: [0, -7, 0] }}
       transition={{ duration: 4 + index * 0.8, repeat: Infinity, ease: 'easeInOut' }}
-      style={{ height: '100%' }}
     >
       {/* Framer Motion doesn't support CSS animation keyframes on same element,
           so we use a wrapper div for the animated border */}
       <div style={{
-        height: '100%',
         padding: '2px',
         borderRadius: '20px',
         background: 'linear-gradient(135deg, #f472b6, #c084fc, #818cf8, #f472b6)',
@@ -43,7 +40,6 @@ function RecCard({ rec, index }) {
         boxShadow: '0 8px 40px rgba(244,114,182,0.15)',
       }}>
         <div style={{
-          height: '100%',
           background: '#0c0c18',
           borderRadius: '18px',
           padding: '32px',
@@ -114,12 +110,17 @@ export default function Recommendations() {
       </motion.div>
 
       <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', alignItems: 'stretch' }}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px' }}
         className="recommendations-grid"
       >
-        {recommendations.map((rec, i) => (
-          <RecCard key={i} rec={rec} index={i} />
-        ))}
+        {recommendations.map((rec, i) => {
+          const gridColumn = i === 0 ? '1 / 3' : i === 1 ? '3 / 5' : '2 / 4';
+          return (
+            <div key={i} style={{ gridColumn }}>
+              <RecCard rec={rec} index={i} />
+            </div>
+          );
+        })}
       </div>
 
       <motion.p
