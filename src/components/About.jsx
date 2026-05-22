@@ -19,55 +19,78 @@ export default function About() {
       </motion.div>
 
       {/* Bio */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '36px', marginBottom: '64px', alignItems: 'center' }} className="about-grid">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          style={{ position: 'relative' }}
-        >
-          {/* Gradient border ring */}
-          <div style={{
-            position: 'absolute', inset: '-3px',
-            borderRadius: '22px',
-            background: 'linear-gradient(135deg, #f472b6, #c084fc, #818cf8)',
-            zIndex: 0, filter: 'blur(1px)',
-          }} />
-          <div style={{ position: 'relative', zIndex: 1, borderRadius: '20px', overflow: 'hidden' }}>
-            <img
-              src="/shreya-about.jpg"
-              alt="Shreya Shere"
-              style={{
-                width: '100%',
-                height: '420px',
-                objectFit: 'cover',
-                objectPosition: 'center 58%',
-                display: 'block',
-              }}
-            />
-            {/* Bottom fade overlay */}
-            <div style={{
-              position: 'absolute', bottom: 0, left: 0, right: 0,
-              height: '80px',
-              background: 'linear-gradient(to top, rgba(9,9,15,0.6) 0%, transparent 100%)',
-            }} />
-          </div>
-        </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        style={{ maxWidth: '720px', margin: '0 auto 64px', textAlign: 'center' }}
+      >
+        <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#fafafa', marginBottom: '18px' }}>
+          Hi, I&apos;m {personalInfo.name}
+        </h2>
+        <p style={{ color: '#a1a1aa', lineHeight: 1.85, marginBottom: '18px', fontSize: '1rem' }}>{personalInfo.bioLong}</p>
+        <p style={{ color: '#a1a1aa', lineHeight: 1.85, fontSize: '1rem' }}>{personalInfo.bioLong2}</p>
+      </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#fafafa', marginBottom: '18px' }}>
-            Hi, I&apos;m {personalInfo.name}
-          </h2>
-          <p style={{ color: '#a1a1aa', lineHeight: 1.85, marginBottom: '18px', fontSize: '1rem' }}>{personalInfo.bioLong}</p>
-          <p style={{ color: '#a1a1aa', lineHeight: 1.85, fontSize: '1rem' }}>{personalInfo.bioLong2}</p>
-        </motion.div>
-      </div>
+      {/* Photo Gallery */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        style={{ marginBottom: '64px' }}
+      >
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', alignItems: 'end' }}>
+          {[
+            { src: '/grad-1.jpg', rotate: '-2deg', translateY: '0px', pos: 'center 30%' },
+            { src: '/grad-3.jpg', rotate: '0deg',  translateY: '-20px', pos: 'center 20%' },
+            { src: '/grad-2.jpg', rotate: '2deg',  translateY: '0px', pos: 'center 20%' },
+          ].map((photo, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              whileHover={{ scale: 1.03, rotate: '0deg', zIndex: 10 }}
+              style={{
+                transform: `rotate(${photo.rotate}) translateY(${photo.translateY})`,
+                position: 'relative',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.45)',
+                cursor: 'default',
+              }}
+            >
+              <div style={{
+                position: 'absolute', inset: '-2px',
+                borderRadius: '18px',
+                background: 'linear-gradient(135deg, #f472b6, #c084fc, #818cf8)',
+                zIndex: 0,
+              }} />
+              <div style={{ position: 'relative', zIndex: 1, borderRadius: '14px', overflow: 'hidden', margin: '2px' }}>
+                <img
+                  src={photo.src}
+                  alt="Graduation photo"
+                  style={{
+                    width: '100%',
+                    height: '380px',
+                    objectFit: 'cover',
+                    objectPosition: photo.pos,
+                    display: 'block',
+                  }}
+                />
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  height: '60px',
+                  background: 'linear-gradient(to top, rgba(9,9,15,0.5) 0%, transparent 100%)',
+                }} />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Education */}
       <motion.div
