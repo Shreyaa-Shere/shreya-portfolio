@@ -87,8 +87,8 @@ export default function About() {
                   alt="Graduation photo"
                   style={{
                     width: '100%',
-                    height: isMobile ? '260px' : '380px',
-                    objectFit: 'cover',
+                    height: isMobile ? 'auto' : '380px',
+                    objectFit: isMobile ? 'contain' : 'cover',
                     objectPosition: photo.pos,
                     display: 'block',
                   }}

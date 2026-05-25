@@ -175,7 +175,7 @@ body {
   .photo-grid {
     grid-template-columns: 1fr !important;
   }
-  .photo-grid img { height: 260px !important; }
+
   .recommendations-grid > * {
     grid-column: auto !important;
   }
