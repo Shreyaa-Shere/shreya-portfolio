@@ -1,10 +1,22 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Server, Code2, GitMerge, GraduationCap } from 'lucide-react';
 import { personalInfo, education, expertise } from '../data/portfolioData';
 
 const iconMap = { Server, Code2, GitMerge };
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+  return isMobile;
+}
+
 export default function About() {
+  const isMobile = useIsMobile();
   return (
     <section className="page-wrap" style={{ paddingTop: '72px' }}>
       <motion.div
@@ -41,7 +53,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
         style={{ marginBottom: '64px' }}
       >
-        <div className="photo-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', alignItems: 'end' }}>
+        <div className="photo-grid" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap: '16px', alignItems: 'end' }}>
           {[
             { src: '/grad-1.jpg', rotate: '-2deg', translateY: '0px', pos: 'center 30%' },
             { src: '/grad-3.jpg', rotate: '0deg',  translateY: '-20px', pos: 'center 20%' },
@@ -53,9 +65,9 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
-              whileHover={{ scale: 1.03, rotate: '0deg', zIndex: 10 }}
+              whileHover={isMobile ? {} : { scale: 1.03, rotate: '0deg', zIndex: 10 }}
               style={{
-                transform: `rotate(${photo.rotate}) translateY(${photo.translateY})`,
+                transform: isMobile ? 'none' : `rotate(${photo.rotate}) translateY(${photo.translateY})`,
                 position: 'relative',
                 borderRadius: '16px',
                 overflow: 'hidden',
@@ -75,7 +87,7 @@ export default function About() {
                   alt="Graduation photo"
                   style={{
                     width: '100%',
-                    height: '380px',
+                    height: isMobile ? '260px' : '380px',
                     objectFit: 'cover',
                     objectPosition: photo.pos,
                     display: 'block',
