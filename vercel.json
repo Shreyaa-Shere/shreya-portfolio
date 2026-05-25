@@ -1,3 +1,15 @@
 {
+  "redirects": [
+    {
+      "source": "/projects/receipt-genie",
+      "destination": "https://receiptgenie.streamlit.app/",
+      "permanent": false
+    },
+    {
+      "source": "/projects/ai-infra-research-dashboard",
+      "destination": "https://dashboard.shreyashere.dev/login",
+      "permanent": false
+    }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

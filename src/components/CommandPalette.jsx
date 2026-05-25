@@ -1,15 +1,17 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Home, User, Code2, Briefcase, FolderOpen, Star, Mail, ArrowRight } from 'lucide-react';
+import { Search, Home, User, Code2, Briefcase, FolderOpen, Star, Mail, ArrowRight, ExternalLink } from 'lucide-react';
 
 const pages = [
-  { name: 'Home',       id: 'home',       icon: Home,       desc: 'Landing page'               },
-  { name: 'About',      id: 'about',      icon: User,       desc: 'Who I am'                   },
-  { name: 'Skills',     id: 'skills',     icon: Code2,      desc: 'Technical skills & tools'   },
-  { name: 'Experience', id: 'experience', icon: Briefcase,  desc: 'Work history'                },
-  { name: 'Projects',   id: 'projects',   icon: FolderOpen, desc: "What I've built"             },
-  { name: 'Leadership', id: 'leadership', icon: Star,       desc: 'Leadership roles'            },
-  { name: 'Contact',    id: 'contact',    icon: Mail,       desc: 'Get in touch'                },
+  { name: 'Home',                   id: 'home',       icon: Home,         desc: 'Landing page'               },
+  { name: 'About',                  id: 'about',      icon: User,         desc: 'Who I am'                   },
+  { name: 'Skills',                 id: 'skills',     icon: Code2,        desc: 'Technical skills & tools'   },
+  { name: 'Experience',             id: 'experience', icon: Briefcase,    desc: 'Work history'                },
+  { name: 'Projects',               id: 'projects',   icon: FolderOpen,   desc: "What I've built"             },
+  { name: 'Leadership',             id: 'leadership', icon: Star,         desc: 'Leadership roles'            },
+  { name: 'Contact',                id: 'contact',    icon: Mail,         desc: 'Get in touch'                },
+  { name: 'Open Receipt Genie',     icon: ExternalLink, desc: 'Launch live app', href: 'https://receiptgenie.streamlit.app/' },
+  { name: 'Open AI Infra Dashboard', icon: ExternalLink, desc: 'Launch live app', href: 'https://dashboard.shreyashere.dev/login' },
 ];
 
 export default function CommandPalette({ open, onClose }) {
@@ -43,8 +45,12 @@ export default function CommandPalette({ open, onClose }) {
     el?.scrollIntoView({ block: 'nearest' });
   }, [activeIndex]);
 
-  const go = useCallback((id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const go = useCallback((page) => {
+    if (page.href) {
+      window.open(page.href, '_blank', 'noreferrer');
+    } else {
+      document.getElementById(page.id)?.scrollIntoView({ behavior: 'smooth' });
+    }
     onClose();
   }, [onClose]);
 
@@ -59,7 +65,7 @@ export default function CommandPalette({ open, onClose }) {
         e.preventDefault();
         setActiveIndex(i => (i - 1 + filtered.length) % filtered.length);
       } else if (e.key === 'Enter') {
-        if (filtered[activeIndex]) go(filtered[activeIndex].id);
+        if (filtered[activeIndex]) go(filtered[activeIndex]);
       } else if (e.key === 'Escape') {
         onClose();
       }
@@ -182,7 +188,7 @@ export default function CommandPalette({ open, onClose }) {
                     return (
                       <button
                         key={page.id}
-                        onClick={() => go(page.id)}
+                        onClick={() => go(page)}
                         onMouseEnter={() => setActiveIndex(i)}
                         style={{
                           width: '100%',
