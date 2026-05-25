@@ -171,9 +171,11 @@ body {
 /* ── Inner page grids ── */
 @media (max-width: 768px) {
   .about-grid, .edu-grid, .expertise-grid,
-  .projects-grid, .contact-grid, .values-grid, .recommendations-grid {
+  .projects-grid, .contact-grid, .values-grid, .recommendations-grid,
+  .photo-grid {
     grid-template-columns: 1fr !important;
   }
+  .photo-grid img { height: 260px !important; }
   .recommendations-grid > * {
     grid-column: auto !important;
   }

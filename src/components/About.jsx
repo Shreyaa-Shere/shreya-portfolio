@@ -41,7 +41,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
         style={{ marginBottom: '64px' }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', alignItems: 'end' }}>
+        <div className="photo-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', alignItems: 'end' }}>
           {[
             { src: '/grad-1.jpg', rotate: '-2deg', translateY: '0px', pos: 'center 30%' },
             { src: '/grad-3.jpg', rotate: '0deg',  translateY: '-20px', pos: 'center 20%' },
